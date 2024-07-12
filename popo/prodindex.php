@@ -3,21 +3,36 @@
 $perPage = 5;
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+//跳轉頁面
+if ($page < 1) {
+  header('Location: ?page=1');
+  exit; //結束程式碼
+}
 
 require __DIR__ . '/db-connect-setting.php';
 $totalSql = "SELECT COUNT(*) FROM PRODLIST";
 $totalRows = $pdo->query($totalSql)->fetch(PDO::FETCH_NUM)[0];
 
-//計算總頁數
-$totalPages = ceil($totalRows / $perPage);
-//取得該頁資料
-$sql = sprintf(
-  "SELECT * FROM PRODLIST LIMIT %d OFFSET %d",
-  $perPage,
-  ($page - 1) * $perPage
-);
+//跳轉到最後一頁
+$totalPages = 0;
+$rows = [];
+if ($totalRows) {
+  //如果頁數大於總頁數，結束程式碼
+  $totalPages = ceil($totalRows / $perPage);
+  if ($page > $totalPages) {
+    header('Location: ?page=' . $totalPages);
+    exit;
+  }
+  //取得該頁資料
+  $sql = sprintf(
+    "SELECT * FROM PRODLIST LIMIT %d OFFSET %d",
+    $perPage,
+    ($page - 1) * $perPage
+  );
+  $rows = $pdo->query($sql)->fetchAll();
+}
 
-$rows = $pdo->query($sql)->fetchAll();
+
 
 ?>
 
