@@ -1,3 +1,10 @@
+<?php
+if(!isset($pageName)){
+  $pageName = "";
+}
+?>
+
+
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -8,10 +15,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link <?= $pageName == 'prod_list' ? 'active' : '' ?>" aria-current="page" href="../prodindex.php">商品列表</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../add.php">新增商品</a>
+            <a class="nav-link <?= $pageName == 'prod_add' ? 'active' : '' ?>" href="../add.php">新增商品</a>
           </li>
         </ul>
         <form class="d-flex">
