@@ -2,7 +2,7 @@
 //每頁有5筆資料
 $perPage = 5;
 
-$page = isset($_GET['page']) ? intval($_GET['page']) : 0;
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
 require __DIR__ . '/db-connect-setting.php';
 $totalSql = "SELECT COUNT(*) FROM PRODLIST";
@@ -12,9 +12,9 @@ $totalRows = $pdo->query($totalSql)->fetch(PDO::FETCH_NUM)[0];
 $totalPages = ceil($totalRows / $perPage);
 //取得該頁資料
 $sql = sprintf(
-  "SELECT * FROM PRODLIST LIMIT %s, %s",
-  ($page - 5) + $perPage,
-  $perPage
+  "SELECT * FROM PRODLIST LIMIT %d OFFSET %d",
+  $perPage,
+  ($page - 1) * $perPage
 );
 
 $rows = $pdo->query($sql)->fetchAll();
@@ -28,19 +28,15 @@ $rows = $pdo->query($sql)->fetchAll();
     <div class="col">
       <nav aria-label="Page navigation example">
         <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
+          <?php
+          for ($i = 1; $i <= $totalPages; $i++) :
+          ?>
+            <li class="page-item <?= $i == $page ? 'active' : '' ?>">
+              <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+            </li>
+          <?php
+          endfor;
+          ?>
         </ul>
       </nav>
     </div>
