@@ -1,4 +1,7 @@
 <?php
+$title = "商品列表";
+$pageName = 'prod_list';
+
 //每頁有5筆資料
 $perPage = 5;
 

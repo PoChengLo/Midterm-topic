@@ -1,4 +1,7 @@
 <?php
+$title = "新增商品";
+$pageName = 'prod_add';
+
 require __DIR__ . '/db-connect-setting.php';
 ?>
 <?php
