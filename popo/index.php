@@ -5,8 +5,8 @@ $perPage = 5;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 //跳轉頁面
 if ($page < 1) {
-  header('Location: ?page=1');
-  exit; //結束程式碼
+  header('Location: ./');
+  exit; //結束程式碼 
 }
 
 require __DIR__ . '/db-connect-setting.php';
@@ -31,9 +31,6 @@ if ($totalRows) {
   );
   $rows = $pdo->query($sql)->fetchAll();
 }
-
-
-
 ?>
 
 <?php include __DIR__ . '/parts/prodhead.php' ?>
@@ -44,12 +41,14 @@ if ($totalRows) {
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <?php
-          for ($i = 1; $i <= $totalPages; $i++) :
+          for ($i = $page - 5; $i <= $page + 5; $i++) :
+            if ($i >= 1 && $i <= $totalPages) :
           ?>
-            <li class="page-item <?= $i == $page ? 'active' : '' ?>">
-              <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-            </li>
+              <li class="page-item <?= $i == $page ? 'active' : '' ?>">
+                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+              </li>
           <?php
+            endif;
           endfor;
           ?>
         </ul>
