@@ -5,7 +5,7 @@ $perPage = 5;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 //跳轉頁面
 if ($page < 1) {
-  header('Location: ./');
+  header('Location: ./prodindex.php');
   exit; //結束程式碼 
 }
 
