@@ -79,12 +79,18 @@ if ($totalRows) {
         <tbody>
           <?php foreach ($rows as $r) : ?>
             <tr>
-              <td><a href="proddel.php?prod_id=<?= $r['prod_id'] ?>"><i class="fa-regular fa-trash-can"></i></a></td>
+              <!-- 刪除前詢問 -->
+              <td>
+                <!-- <a href="proddel.php?prod_id=<?= $r['prod_id'] ?>" onclick="return confirm(`是否要刪除編號為<?= $r['prod_id'] ?>的資料`)">
+                  </a> -->
+                <a href="javascript: deleteOne(<?= $r['prod_id'] ?>)">
+                  <i class="fa-regular fa-trash-can"></i></a>
+              </td>
               <td><?= $r['prod_id'] ?></td>
-              <td><?= $r['prod_name'] ?></td>
+              <td><?= htmlentities($r['prod_name']) ?></td>
               <td><img src="./imgs/<?= $r['prod_img'] ?>" alt=""></td>
               <td><?= $r['prod_tag_id'] ?></td>
-              <td><?= $r['prod_desc'] ?></td>
+              <td><?= htmlentities($r['prod_desc']) ?></td>
               <td><?= $r['prod_price'] ?></td>
               <td><?= $r['prod_disc'] ?></td>
               <td><?= $r['prod_stock'] ?></td>
@@ -99,6 +105,11 @@ if ($totalRows) {
 </div>
 <?php include __DIR__ . '/parts/prodscript.php' ?>
 <script>
-  const data = <?= json_encode($rows); ?>
+  const data = <?= json_encode($rows) ?>;
+  const deleteOne = function(prod_id) {
+    if (confirm(`是否刪除編號為${prod_id}的資料`)) {
+      location.href = `proddel.php?prod_id=${prod_id}`;
+    }
+  };
 </script>
 <?php include __DIR__ . '/parts/prodfoot.php' ?>
