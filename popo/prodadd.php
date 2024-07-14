@@ -16,6 +16,7 @@ include __DIR__ . '/parts/prodhead.php';
   <div class="container">
     <div class="row">
       <div class="col-6  mx-auto mt-3">
+      <h4>新增商品資料</h4>
         <form name="form1" onsubmit="sendData(event)" novalidate>
           <div class="mb-3">
             <label for="prod_id" class="form-label">商品編號</label>
@@ -62,7 +63,7 @@ include __DIR__ . '/parts/prodhead.php';
             <input type="date" class="form-control" id="prod_update" name="prod_update" required>
             <div class="form-text"></div>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">新增</button>
         </form>
       </div>
     </div>
