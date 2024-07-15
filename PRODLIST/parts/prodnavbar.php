@@ -15,10 +15,10 @@ if(!isset($pageName)){
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link <?= $pageName == 'prod_list' ? 'active' : '' ?>" aria-current="page" href="../popo/prodindex.php">商品列表</a>
+            <a class="nav-link <?= $pageName == 'prod_list' ? 'active' : '' ?>" aria-current="page" href="../PRODLIST/prodindex.php">商品列表</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $pageName == 'prod_add' ? 'active' : '' ?>" aria-current="page"  href="../popo/prodadd.php">新增商品</a>
+            <a class="nav-link <?= $pageName == 'prod_add' ? 'active' : '' ?>" aria-current="page"  href="../PRODLIST/prodadd.php">新增商品</a>
           </li>
         </ul>
         <form class="d-flex">
