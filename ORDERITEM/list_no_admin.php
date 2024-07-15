@@ -1,6 +1,6 @@
 <?php
 $title = "商品列表";
-$pageName = 'prod_list';
+$pageName = '_list';
 
 //每頁有5筆資料
 $perPage = 5;
@@ -8,12 +8,12 @@ $perPage = 5;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 //跳轉頁面
 if ($page < 1) {
-  header('Location: ./prodindex.php');
+  header('Location: ./index.php');
   exit; //結束程式碼 
 }
 
 require __DIR__ . '/db-connect-setting.php';
-$totalSql = "SELECT COUNT(*) FROM PRODLIST";
+$totalSql = "SELECT COUNT(*) FROM LIST";
 $totalRows = $pdo->query($totalSql)->fetch(PDO::FETCH_NUM)[0];
 
 //跳轉到最後一頁
@@ -28,7 +28,7 @@ if ($totalRows) {
   }
   //取得該頁資料
   $sql = sprintf(
-    "SELECT * FROM PRODLIST LIMIT %d OFFSET %d",
+    "SELECT * FROM LIST LIMIT %d OFFSET %d",
     $perPage,
     ($page - 1) * $perPage
   );
@@ -36,8 +36,8 @@ if ($totalRows) {
 }
 ?>
 
-<?php include __DIR__ . '/parts/prodhead.php' ?>
-<?php include __DIR__ . '/parts/prodnavbar.php' ?>
+<?php include __DIR__ . '/parts/head.php' ?>
+<?php include __DIR__ . '/parts/navbar.php' ?>
 <div class="container">
   <div class="row">
     <div class="col">
@@ -78,15 +78,15 @@ if ($totalRows) {
           <?php foreach ($rows as $r) : ?>
             <tr>
 
-              <td><?= $r['prod_id'] ?></td>
-              <td><?= htmlentities($r['prod_name']) ?></td>
-              <td><img src="./imgs/<?= $r['prod_img'] ?>" alt=""></td>
-              <td><?= $r['prod_tag_id'] ?></td>
-              <td><?= htmlentities($r['prod_desc']) ?></td>
-              <td><?= $r['prod_price'] ?></td>
-              <td><?= $r['prod_disc'] ?></td>
-              <td><?= $r['prod_stock'] ?></td>
-              <td><?= $r['prod_update'] ?></td>
+              <td><?= $r['_id'] ?></td>
+              <td><?= htmlentities($r['_name']) ?></td>
+              <td><img src="./imgs/<?= $r['_img'] ?>" alt=""></td>
+              <td><?= $r['_tag_id'] ?></td>
+              <td><?= htmlentities($r['_desc']) ?></td>
+              <td><?= $r['_price'] ?></td>
+              <td><?= $r['_disc'] ?></td>
+              <td><?= $r['_stock'] ?></td>
+              <td><?= $r['_update'] ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
@@ -94,13 +94,13 @@ if ($totalRows) {
     </div>
   </div>
 </div>
-<?php include __DIR__ . '/parts/prodscript.php' ?>
+<?php include __DIR__ . '/parts/script.php' ?>
 <script>
   const data = <?= json_encode($rows) ?>;
-  const deleteOne = function(prod_id) {
-    if (confirm(`是否刪除編號為${prod_id}的資料`)) {
-      location.href = `proddel.php?prod_id=${prod_id}`;
+  const deleteOne = function(_id) {
+    if (confirm(`是否刪除編號為${_id}的資料`)) {
+      location.href = `del.php?_id=${_id}`;
     }
   };
 </script>
-<?php include __DIR__ . '/parts/prodfoot.php' ?>
+<?php include __DIR__ . '/parts/foot.php' ?>

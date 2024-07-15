@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/db-connect-setting.php';
 
-$sql = "SELECT * FROM PRODLIST";
+$sql = "SELECT * FROM LIST";
 $stmt = $pdo->query($sql);
 $rows = $stmt->fetchAll();
 
@@ -12,7 +12,7 @@ $rows = $stmt->fetchAll();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRODLIST</title>
+  <title>LIST</title>
 </head>
 <body>
   <?php echo json_encode($rows, JSON_UNESCAPED_UNICODE)?>
