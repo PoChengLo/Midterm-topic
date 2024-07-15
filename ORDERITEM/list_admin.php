@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/parts/admin-required.php';
+// require __DIR__ . '/parts/admin-required.php';
 $title = "商品列表";
 $pageName = 'prod_list';
 

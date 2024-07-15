@@ -1,5 +1,4 @@
 <?php
-require __DIR__ . '/parts/admin-required.php';
 $title = "商品列表";
 $pageName = 'prod_list';
 
@@ -64,7 +63,6 @@ if ($totalRows) {
       <table class="table table-dark table-striped">
         <thead>
           <tr>
-            <th><i class="fa-regular fa-trash-can"></i></th>
             <th scope="col">商品編號</th>
             <th scope="col">商品名稱</th>
             <th scope="col">商品圖片</th>
@@ -74,19 +72,12 @@ if ($totalRows) {
             <th scope="col">商品折扣</th>
             <th scope="col">商品庫存</th>
             <th scope="col">商品上架日期時間</th>
-            <th><i class="fa-regular fa-pen-to-square"></i></th>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($rows as $r) : ?>
             <tr>
-              <!-- 刪除前詢問 -->
-              <td>
-                <!-- <a href="proddel.php?prod_id=<?= $r['prod_id'] ?>" onclick="return confirm(`是否要刪除編號為<?= $r['prod_id'] ?>的資料`)">
-                  </a> -->
-                <a href="javascript: deleteOne(<?= $r['prod_id'] ?>)">
-                  <i class="fa-regular fa-trash-can"></i></a>
-              </td>
+
               <td><?= $r['prod_id'] ?></td>
               <td><?= htmlentities($r['prod_name']) ?></td>
               <td><img src="./imgs/<?= $r['prod_img'] ?>" alt=""></td>
@@ -96,7 +87,6 @@ if ($totalRows) {
               <td><?= $r['prod_disc'] ?></td>
               <td><?= $r['prod_stock'] ?></td>
               <td><?= $r['prod_update'] ?></td>
-              <td><a href="prodedit.php?prod_id=<?= $r['prod_id'] ?>"><i class="fa-regular fa-pen-to-square"></i></a></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
