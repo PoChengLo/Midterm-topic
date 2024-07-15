@@ -8,7 +8,7 @@
     <meta name="rating" content="General" />
     <base target="_self" />
     <meta name="description" content="" />
-    <title><?= empty($title) ? 'Prod Page' : "$title - Prod Page" ?></title>
+    <title><?= empty($title) ? ' Page' : "$title -  Page" ?></title>
     <style></style>
     <!-- CSS only -->
     <link

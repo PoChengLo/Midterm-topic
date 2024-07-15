@@ -1,18 +1,18 @@
 <?php
 $title = "登入";
-$pageName = 'prodlogin';
+$pageName = 'login';
 
 require __DIR__ . '/db-connect-setting.php';
 ?>
 <?php
-include __DIR__ . "/parts/prodhead.php";
+include __DIR__ . "/parts/head.php";
 ?>
 <style>
   form .mb-3 .form-text {
     color: red;
   }
 </style>
-<?php include __DIR__ . '/parts/prodnavbar.php'; ?>
+<?php include __DIR__ . '/parts/navbar.php'; ?>
 <div class="container">
   <div class="row">
     <div class="col-6">
@@ -58,7 +58,7 @@ include __DIR__ . "/parts/prodhead.php";
   </div>
 </div>
 <?php
-include __DIR__ . '/parts/prodscript.php';
+include __DIR__ . '/parts/script.php';
 ?>
 <script>
   const emailField = document.form1.email;
@@ -91,7 +91,7 @@ include __DIR__ . '/parts/prodscript.php';
       // FormData 的個體看成沒有外觀的表單
       const fd = new FormData(document.form1);
 
-      fetch('prodlogin-api.php', {
+      fetch('login-api.php', {
           method: 'POST',
           body: fd, //enctype:multipart/form-data
         })
@@ -99,7 +99,7 @@ include __DIR__ . '/parts/prodscript.php';
         .then(result => {
           console.log(result);
           if (result.success) {
-            location.href = "prodindex.php";
+            location.href = "index.php";
           } else {
             modal.show();
           }
@@ -109,5 +109,5 @@ include __DIR__ . '/parts/prodscript.php';
   };
 </script>
 <?php
-include __DIR__ . '/parts/prodfoot.php';
+include __DIR__ . '/parts/foot.php';
 ?>
