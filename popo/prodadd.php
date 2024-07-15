@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . '/parts/admin-required.php';
+
 $title = "新增商品";
 $pageName = 'prod_add';
 
