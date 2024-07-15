@@ -3,6 +3,11 @@
 require __DIR__ . '/db-connect-setting.php';
 header('Content-Type: application/json');
 
+$output = [
+  'success' => false,
+  'bodyData' => $_POST, #除錯用
+];
+
 $sql = "INSERT INTO `PRODLIST`(
   `prod_id` , `prod_name` , `prod_img` , 
   `prod_tag_id` , `prod_desc` , `prod_price` ,
@@ -26,4 +31,5 @@ $stmt->execute([
   $_POST['prod_stock'],
 ]);
 
-echo json_encode($stmt->rowCount());
+$output['success'] = !!$stmt->rowCount();
+echo json_encode($output);
