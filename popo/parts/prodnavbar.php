@@ -25,6 +25,20 @@ if(!isset($pageName)){
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <ul class="navbar-nav">
+          <?php if(isset($_SESSION['ADMIN'])) :?>
+            <li class="nav-item">
+              <a class="nav-link"><?= $_SESSION["ADMIN"]['name'] ?></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="prodlogout.php">登出</a>
+            </li>
+            <?php else : ?>
+              <li class="nav-item">
+              <a class="nav-link <?= $pageName == 'login' ? 'actice' : '' ?>" href="prodlogin.php">登入</a>
+            </li>
+            <?php endif; ?>
+        </ul>
       </div>
     </div>
   </nav>
