@@ -3,17 +3,17 @@ require __DIR__ . '/parts/admin-required.php';
 
 require __DIR__ . '/db-connect-setting.php';
 
-$_id = isset($_GET['_id']) ? intval($_GET['_id']) : 0;
-if (empty($_id)) {
-  header('Location: index.php');
+$ord_detail_id = isset($_GET['ord_detail_id']) ? intval($_GET['ord_detail_id']) : 0;
+if (empty($ord_detail_id)) {
+  header('Location: index_.php');
   exit;
 }
 
-$sql = "SELECT * FROM list WHERE _id=$_id";
+$sql = "SELECT * FROM ORDERITEM WHERE ord_detail_id=$ord_detail_id";
 
 $r = $pdo->query($sql)->fetch();
 if (empty($r)) {
-  header('Location: index.php');
+  header('Location: index_.php');
   exit;
 }
 ?>
@@ -30,51 +30,51 @@ include __DIR__ . '/parts/head.php';
 <div class="container">
   <div class="row">
     <div class="col-6  mx-auto mt-3">
-      <h4>編輯商品資料</h4>
+      <h4>編輯訂單項目資料</h4>
       <form name="form1" onsubmit="sendData(event)" novalidate>
         <div class="mb-3">
-          <label for="_id" class="form-label">商品編號</label>
-          <input type="number" class="form-control" id="_id" name="_id" value="<?=$r['_id']?>" required>
+          <label for="ord_detail_id" class="form-label">訂單明細編號</label>
+          <input type="number" class="form-control" id="ord_detail_id" name="ord_detail_id" value="<?= $r['ord_detail_id'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
-          <label for="_name" class="form-label">商品名稱</label>
-          <input type="text" class="form-control" id="_name" name="_name" value="<?= htmlentities($r['_name'])?>" required>
+          <label for="ord_id" class="form-label">訂單編號</label>
+          <input type="number" class="form-control" id="ord_id" name="ord_id" value="<?= ($r['ord_id']) ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
-          <label for="_img" class="form-label">商品圖片</label>
-          <input type="text" class="form-control" id="_img" name="_img" value="<?=$r['_img']?>"  required>
+          <label for="prod_id" class="form-label">商品編號</label>
+          <input type="number" class="form-control" id="prod_id" name="prod_id" value="<?= $r['prod_id'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
-          <label for="_tag_id" class="form-label">商品標籤編號</label>
-          <input type="number" class="form-control" id="_tag_id" name="_tag_id" value="<?=$r['_tag_id']?>" required>
+          <label for="item_price" class="form-label">訂單商品價格</label>
+          <input type="number" class="form-control" id="item_price" name="item_price" value="<?= $r['item_price'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
-          <label for="_desc">商品介紹</label>
-          <textarea class="form-control" name="_desc" id="_desc" required><?= htmlentities($r['_desc'])?></textarea>
+          <label for="item_qty" class="form-label">訂單商品數量</label>
+          <input type="number" class="form-control" id="item_qty" name="item_qty" value="<?= $r['item_qty'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
-          <label for="_price" class="form-label">商品價格</label>
-          <input type="number" class="form-control" id="_price" name="_price" value="<?=$r['_price']?>" required>
+          <label for="item_total" class="form-label">訂單項目金額</label>
+          <input type="number" class="form-control" id="item_total" name="item_total" value="<?= $r['item_total'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
-          <label for="_disc" class="form-label">商品折扣</label>
-          <input type="number" class="form-control" id="_disc" name="_disc" value="<?=$r['_disc']?>" required>
+          <label for="prod_comm">商品評論</label>
+          <textarea class="form-control" name="prod_comm" id="prod_comm" required><?= htmlentities($r['prod_comm']) ?></textarea>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
-          <label for="_stock" class="form-label">商品庫存</label>
-          <input type="number" class="form-control" id="_stock" name="_stock" value="<?=$r['_stock']?>" required>
+          <label for="prod_star" class="form-label">商品星數</label>
+          <input type="number" class="form-control" id="prod_star" name="prod_star" value="<?= $r['prod_star'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
-          <label for="_update" class="form-label">商品上架日期</label>
-          <input type="date" class="form-control" id="_update" name="_update" value="<?=$r['_update']?>" required>
+          <label for="prod_sales" class="form-label">商品銷量</label>
+          <input type="number" class="form-control" id="prod_sales" name="prod_sales" value="<?= $r['prod_sales'] ?>" required>
           <div class="form-text"></div>
         </div>
         <button type="submit" class="btn btn-primary">修改</button>
@@ -98,7 +98,7 @@ include __DIR__ . '/parts/head.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        <a href="./index.php" class="btn btn-primary">到列表頁</a>
+        <a href="./index_.php" class="btn btn-primary">到列表頁</a>
       </div>
     </div>
   </div>
@@ -113,7 +113,6 @@ include __DIR__ . '/parts/script.php';
   let allPass = false;
   const modal = new bootstrap.Modal('#exampleModal');
   const modalBody = document.querySelector('#exampleModal .modal-body');
-
   //AJAX
   const sendData = function(event) {
     event.preventDefault();
@@ -139,13 +138,13 @@ include __DIR__ . '/parts/script.php';
       }
     }
 
+
     if (allPass) {
       //FormData 的個體看成沒有外觀的表單
       const fd = new FormData(document.form1);
-
       fetch('edit-api.php', {
           method: 'POST',
-          body: fd, //enctype: multipart/form-data
+          body: fd,  //enctype: multipart/form-data
         }).then(r => r.json())
         .then(result => {
           console.log(result);
@@ -163,7 +162,7 @@ include __DIR__ . '/parts/script.php';
           modal.show();
         })
         .catch(error => {
-          console.error('Error:', error);
+          console.error('Error:', error)
           modalBody.innerHTML = '<div class="alert alert-danger" role="alert">系統錯誤，請稍後再試</div>';
           modal.show();
         });

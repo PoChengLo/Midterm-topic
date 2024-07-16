@@ -99,7 +99,7 @@ include __DIR__ . '/parts/script.php';
         .then(result => {
           console.log(result);
           if (result.success) {
-            location.href = "index.php";
+            location.href = "index_.php";
           } else {
             modal.show();
           }

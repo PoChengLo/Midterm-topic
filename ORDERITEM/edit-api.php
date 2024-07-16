@@ -11,43 +11,43 @@ $output = [
 ];
 
 //表單欄位的檢查
-$_id = isset($_POST['_id']) ? intval($_POST['_id']) : 0;
-if (empty($_id)){
+$ord_detail_id = isset($_POST['ord_detail_id']) ? intval($_POST['ord_detail_id']) : 0;
+if (empty($ord_detail_id)) {
   $output['code'] = 400;
   echo json_encode($output);
   exit;
 }
 
-$_name = $_POST['_name'] ?? ''; #如果 ?? 左邊的值為 undefined ，就使用右邊的值
-if($_name == ''){
-  $output['code'] = 405;
-  echo json_encode($output);
-  exit;
-}
+// $_name = $_POST['_name'] ?? ''; #如果 ?? 左邊的值為 undefined ，就使用右邊的值
+// if($_name == ''){
+//   $output['code'] = 405;
+//   echo json_encode($output);
+//   exit;
+// }
 
-$sql = "UPDATE `list` SET
-  `_name` = ?,
-  `_img` = ?,
-  `_tag_id` = ?,
-  `_desc` = ?,
-  `_price` = ?,
-  `_disc` = ?,
-  `_stock` = ?,
-  `_update` = ?
-  WHERE  `_id` = ?";
+$sql = "UPDATE `ORDERITEM` SET
+  `ord_id` = ?,
+  `prod_id` = ?,
+  `item_price` = ?,
+  `item_qty` = ?,
+  `item_total` = ?,
+  `prod_comm` = ?,
+  `prod_star` = ?,
+  `prod_sales` = ?
+  WHERE  `ord_detail_id` = ?";
 
 //準備 sql 語法，除了 ”值 ” 語法要合法
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-  $_POST['_name'],
-  $_POST['_img'],
-  $_POST['_tag_id'],
-  $_POST['_desc'],
-  $_POST['_price'],
-  $_POST['_disc'],
-  $_POST['_stock'],
-  $_POST['_update'],
-  $_POST['_id'],
+  $_POST['ord_id'],
+  $_POST['prod_id'],
+  $_POST['item_price'],
+  $_POST['item_qty'],
+  $_POST['item_total'],
+  $_POST['prod_comm'],
+  $_POST['prod_star'],
+  $_POST['prod_sales'],
+  $_POST['ord_detail_id'],
 ]);
 
 $output['success'] = !!$stmt->rowCount();
