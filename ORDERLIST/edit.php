@@ -3,17 +3,17 @@ require __DIR__ . '/parts/admin-required.php';
 
 require __DIR__ . '/db-connect-setting.php';
 
-$_id = isset($_GET['_id']) ? intval($_GET['_id']) : 0;
-if (empty($_id)) {
-  header('Location: index.php');
+$ord_id = isset($_GET['ord_id']) ? intval($_GET['ord_id']) : 0;
+if (empty($ord_id)) {
+  header('Location: index_.php');
   exit;
 }
 
-$sql = "SELECT * FROM list WHERE _id=$_id";
+$sql = "SELECT * FROM ORDERLIST WHERE ord_id=$ord_id";
 
 $r = $pdo->query($sql)->fetch();
 if (empty($r)) {
-  header('Location: index.php');
+  header('Location: index_.php');
   exit;
 }
 ?>
@@ -30,55 +30,40 @@ include __DIR__ . '/parts/head.php';
 <div class="container">
   <div class="row">
     <div class="col-6  mx-auto mt-3">
-      <h4>編輯商品資料</h4>
+      <h4>編輯訂單資料</h4>
       <form name="form1" onsubmit="sendData(event)" novalidate>
-        <div class="mb-3">
-          <label for="_id" class="form-label">商品編號</label>
-          <input type="number" class="form-control" id="_id" name="_id" value="<?=$r['_id']?>" required>
-          <div class="form-text"></div>
-        </div>
-        <div class="mb-3">
-          <label for="_name" class="form-label">商品名稱</label>
-          <input type="text" class="form-control" id="_name" name="_name" value="<?= htmlentities($r['_name'])?>" required>
-          <div class="form-text"></div>
-        </div>
-        <div class="mb-3">
-          <label for="_img" class="form-label">商品圖片</label>
-          <input type="text" class="form-control" id="_img" name="_img" value="<?=$r['_img']?>"  required>
-          <div class="form-text"></div>
-        </div>
-        <div class="mb-3">
-          <label for="_tag_id" class="form-label">商品標籤編號</label>
-          <input type="number" class="form-control" id="_tag_id" name="_tag_id" value="<?=$r['_tag_id']?>" required>
-          <div class="form-text"></div>
-        </div>
-        <div class="mb-3">
-          <label for="_desc">商品介紹</label>
-          <textarea class="form-control" name="_desc" id="_desc" required><?= htmlentities($r['_desc'])?></textarea>
-          <div class="form-text"></div>
-        </div>
-        <div class="mb-3">
-          <label for="_price" class="form-label">商品價格</label>
-          <input type="number" class="form-control" id="_price" name="_price" value="<?=$r['_price']?>" required>
-          <div class="form-text"></div>
-        </div>
-        <div class="mb-3">
-          <label for="_disc" class="form-label">商品折扣</label>
-          <input type="number" class="form-control" id="_disc" name="_disc" value="<?=$r['_disc']?>" required>
-          <div class="form-text"></div>
-        </div>
-        <div class="mb-3">
-          <label for="_stock" class="form-label">商品庫存</label>
-          <input type="number" class="form-control" id="_stock" name="_stock" value="<?=$r['_stock']?>" required>
-          <div class="form-text"></div>
-        </div>
-        <div class="mb-3">
-          <label for="_update" class="form-label">商品上架日期</label>
-          <input type="date" class="form-control" id="_update" name="_update" value="<?=$r['_update']?>" required>
-          <div class="form-text"></div>
-        </div>
-        <button type="submit" class="btn btn-primary">修改</button>
-      </form>
+          <div class="mb-3">
+            <label for="ord_id" class="form-label">訂單編號</label>
+            <input type="number" class="form-control" id="ord_id" name="ord_id" value="<?= $r['ord_id'] ?>" required>
+            <div class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="ord_date" class="form-label">訂單日期</label>
+            <input type="text" class="form-control" id="ord_date" name="ord_date" value="<?= htmlentities($r['ord_date']) ?>" required>
+            <div class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="user_id" class="form-label">會員編號</label>
+            <input type="number" class="form-control" id="user_id" name="user_id" value="<?= $r['user_id'] ?>" required>
+            <div class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="ord_total" class="form-label">訂單總額</label>
+            <input type="number" class="form-control" id="ord_total" name="ord_total" value="<?= $r['ord_total'] ?>" required>
+            <div class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="ord_pay" class="form-label">訂單付款狀態</label>
+            <input type="number" class="form-control" id="ord_pay" name="ord_pay" value="<?= $r['ord_pay'] ?>" required>
+            <div class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="ship_date" class="form-label">出貨日期</label>
+            <input type="text" class="form-control" id="ship_date" name="ship_date" value="<?= htmlentities($r['ship_date']) ?>" required>
+            <div class="form-text"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">修改</button>
+        </form>
     </div>
   </div>
 </div>
@@ -98,7 +83,7 @@ include __DIR__ . '/parts/head.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        <a href="./index.php" class="btn btn-primary">到列表頁</a>
+        <a href="./index_.php" class="btn btn-primary">到列表頁</a>
       </div>
     </div>
   </div>

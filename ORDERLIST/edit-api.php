@@ -11,44 +11,40 @@ $output = [
 ];
 
 //表單欄位的檢查
-$_id = isset($_POST['_id']) ? intval($_POST['_id']) : 0;
-if (empty($_id)){
+$ord_id = isset($_POST['ord_id']) ? intval($_POST['ord_id']) : 0;
+if (empty($ord_id)) {
   $output['code'] = 400;
   echo json_encode($output);
   exit;
 }
 
-$_name = $_POST['_name'] ?? ''; #如果 ?? 左邊的值為 undefined ，就使用右邊的值
-if($_name == ''){
-  $output['code'] = 405;
-  echo json_encode($output);
-  exit;
-}
+// $_name = $_POST['_name'] ?? ''; #如果 ?? 左邊的值為 undefined ，就使用右邊的值
+// if($_name == ''){
+//   $output['code'] = 405;
+//   echo json_encode($output);
+//   exit;
+// }
 
-$sql = "UPDATE `list` SET
-  `_name` = ?,
-  `_img` = ?,
-  `_tag_id` = ?,
-  `_desc` = ?,
-  `_price` = ?,
-  `_disc` = ?,
-  `_stock` = ?,
-  `_update` = ?
-  WHERE  `_id` = ?";
+$sql = "UPDATE `ORDERLIST` SET
+  `ord_date` = ?,
+  `user_id` = ?,
+  `ord_total` = ?,
+  `ord_pay` = ?,
+  `ship_date` = ? 
+  WHERE  `ord_id` = ?";
 
 //準備 sql 語法，除了 ”值 ” 語法要合法
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-  $_POST['_name'],
-  $_POST['_img'],
-  $_POST['_tag_id'],
-  $_POST['_desc'],
-  $_POST['_price'],
-  $_POST['_disc'],
-  $_POST['_stock'],
-  $_POST['_update'],
-  $_POST['_id'],
+  $_POST['ord_date'],
+  $_POST['user_id'],
+  $_POST['ord_total'],
+  $_POST['ord_pay'],
+  $_POST['ship_date'],
+  $_POST['ord_id'],
 ]);
 
 $output['success'] = !!$stmt->rowCount();
 echo json_encode($output);
+
+?>

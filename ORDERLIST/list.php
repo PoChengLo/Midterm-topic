@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/db-connect-setting.php';
 
-$sql = "SELECT * FROM LIST";
+$sql = "SELECT * FROM ORDERLIST";
 $stmt = $pdo->query($sql);
 $rows = $stmt->fetchAll();
 

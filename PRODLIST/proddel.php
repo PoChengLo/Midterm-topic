@@ -14,7 +14,7 @@ if(!empty($prod_id)){
 $come_from = "prodindex.php";
 //如果有 referer 的 url 就用 referer url
 if(isset($_SERVER['HTTP_REFERER'])){
-  $come_from = $SERVER['HTTP_REFERER'];
+  $come_from = $_SERVER['HTTP_REFERER'];
 }
 
-header('Location: $come_from');
+header('Location: ' . $come_from);

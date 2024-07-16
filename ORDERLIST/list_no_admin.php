@@ -1,6 +1,6 @@
 <?php
 $title = "商品列表";
-$pageName = '_list';
+$pageName = 'ord_list';
 
 //每頁有5筆資料
 $perPage = 5;
@@ -8,12 +8,12 @@ $perPage = 5;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 //跳轉頁面
 if ($page < 1) {
-  header('Location: ./index.php');
+  header('Location: ./index_.php');
   exit; //結束程式碼 
 }
 
 require __DIR__ . '/db-connect-setting.php';
-$totalSql = "SELECT COUNT(*) FROM LIST";
+$totalSql = "SELECT COUNT(*) FROM ORDERLIST";
 $totalRows = $pdo->query($totalSql)->fetch(PDO::FETCH_NUM)[0];
 
 //跳轉到最後一頁
@@ -28,7 +28,7 @@ if ($totalRows) {
   }
   //取得該頁資料
   $sql = sprintf(
-    "SELECT * FROM LIST LIMIT %d OFFSET %d",
+    "SELECT * FROM ORDERLIST LIMIT %d OFFSET %d",
     $perPage,
     ($page - 1) * $perPage
   );
@@ -63,30 +63,23 @@ if ($totalRows) {
       <table class="table table-dark table-striped">
         <thead>
           <tr>
-            <th scope="col">商品編號</th>
-            <th scope="col">商品名稱</th>
-            <th scope="col">商品圖片</th>
-            <th scope="col">商品類別編號</th>
-            <th scope="col">商品介紹</th>
-            <th scope="col">商品價格</th>
-            <th scope="col">商品折扣</th>
-            <th scope="col">商品庫存</th>
-            <th scope="col">商品上架日期時間</th>
+          <th scope="col">訂單編號</th>
+            <th scope="col">訂單日期</th>
+            <th scope="col">會員編號</th>
+            <th scope="col">訂單總額</th>
+            <th scope="col">付款狀態</th>
+            <th scope="col">出貨日期</th>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($rows as $r) : ?>
             <tr>
-
-              <td><?= $r['_id'] ?></td>
-              <td><?= htmlentities($r['_name']) ?></td>
-              <td><img src="./imgs/<?= $r['_img'] ?>" alt=""></td>
-              <td><?= $r['_tag_id'] ?></td>
-              <td><?= htmlentities($r['_desc']) ?></td>
-              <td><?= $r['_price'] ?></td>
-              <td><?= $r['_disc'] ?></td>
-              <td><?= $r['_stock'] ?></td>
-              <td><?= $r['_update'] ?></td>
+            <td><?= $r['ord_id'] ?></td>
+              <td><?= htmlentities($r['ord_date']) ?></td>
+              <td><?= $r['user_id'] ?></td>
+              <td><?= $r['ord_total'] ?></td>
+              <td><?= $r['ord_pay'] ?></td>
+              <td><?= htmlentities($r['ship_date']) ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
@@ -97,9 +90,9 @@ if ($totalRows) {
 <?php include __DIR__ . '/parts/script.php' ?>
 <script>
   const data = <?= json_encode($rows) ?>;
-  const deleteOne = function(_id) {
-    if (confirm(`是否刪除編號為${_id}的資料`)) {
-      location.href = `del.php?_id=${_id}`;
+  const deleteOne = function(ord_id) {
+    if (confirm(`是否刪除編號為${ord_id}的資料`)) {
+      location.href = `del.php?_id=${ord_id}`;
     }
   };
 </script>
