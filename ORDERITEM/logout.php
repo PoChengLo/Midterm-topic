@@ -4,4 +4,4 @@ session_start();
 
 unset($_SESSION["ADMIN"]);
 
-header('Location: index.php');
+header('Location: index_.php');

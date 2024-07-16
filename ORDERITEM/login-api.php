@@ -42,7 +42,6 @@ if (password_verify($password, $row['password_hash'])) {
   $_SESSION['ADMIN'] = [
     'email' => $row['email'],
     'name' => $row['name'],
-    // 'password' => $row['password_hash'],
   ];
 } else {
   $output['error'] = '密碼是錯的';
