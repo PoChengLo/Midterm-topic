@@ -45,8 +45,8 @@ include __DIR__ . '/parts/prodhead.php';
         <div class="mb-3">
           <label for="prod_img" class="form-label">商品圖片</label>
           <input type="file" name="img_insert" id="img_insert" accept="image/*" />
+          <input type="text" class="form-control" id="prod_img" name="prod_img" value="<?= $r['prod_img'] ?>"  required>
           <img class="mt-3" src="" alt="" id="in_img">
-          <input type="text" class="form-control" id="prod_img" name="prod_img" value="<?= $r['prod_img'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
