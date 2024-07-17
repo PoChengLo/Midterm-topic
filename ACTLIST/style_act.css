@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+h1 {
+  text-align: center;
+  color: #4CAF50;
+}
+
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 3px;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+form {
+  margin: 20px 0;
+}
+
+form label {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+}
+
+form input[type="text"], 
+form input[type="number"],
+form input[type="email"],
+form input[type="datetime-local"] {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.but001{
+  width: 200px;
+  height: 30px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 2px solid green;
+}
+
+.but002{
+  width: 200px;
+  height: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 2px solid green;
+}
+
+.but003{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.but003:hover {background-color: #3e8e41}
+
+.but003:active {
+  transform: translateY(2px);
+}
