@@ -34,47 +34,49 @@ include __DIR__ . '/parts/prodhead.php';
       <form name="form1" onsubmit="sendData(event)" novalidate>
         <div class="mb-3">
           <label for="prod_id" class="form-label">商品編號</label>
-          <input type="number" class="form-control" id="prod_id" name="prod_id" value="<?=$r['prod_id']?>" required>
+          <input type="number" class="form-control" id="prod_id" name="prod_id" value="<?= $r['prod_id'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
           <label for="prod_name" class="form-label">商品名稱</label>
-          <input type="text" class="form-control" id="prod_name" name="prod_name" value="<?= htmlentities($r['prod_name'])?>" required>
+          <input type="text" class="form-control" id="prod_name" name="prod_name" value="<?= htmlentities($r['prod_name']) ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
           <label for="prod_img" class="form-label">商品圖片</label>
-          <input type="text" class="form-control" id="prod_img" name="prod_img" value="<?=$r['prod_img']?>"  required>
+          <input type="file" name="img_insert" id="img_insert" accept="image/*" />
+          <img class="mt-3" src="" alt="" id="in_img">
+          <input type="text" class="form-control" id="prod_img" name="prod_img" value="<?= $r['prod_img'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
           <label for="prod_tag_id" class="form-label">商品標籤編號</label>
-          <input type="number" class="form-control" id="prod_tag_id" name="prod_tag_id" value="<?=$r['prod_tag_id']?>" required>
+          <input type="number" class="form-control" id="prod_tag_id" name="prod_tag_id" value="<?= $r['prod_tag_id'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
           <label for="prod_desc">商品介紹</label>
-          <textarea class="form-control" name="prod_desc" id="prod_desc" required><?= htmlentities($r['prod_desc'])?></textarea>
+          <textarea class="form-control" name="prod_desc" id="prod_desc" required><?= htmlentities($r['prod_desc']) ?></textarea>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
           <label for="prod_price" class="form-label">商品價格</label>
-          <input type="number" class="form-control" id="prod_price" name="prod_price" value="<?=$r['prod_price']?>" required>
+          <input type="number" class="form-control" id="prod_price" name="prod_price" value="<?= $r['prod_price'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
           <label for="prod_disc" class="form-label">商品折扣</label>
-          <input type="number" class="form-control" id="prod_disc" name="prod_disc" value="<?=$r['prod_disc']?>" required>
+          <input type="number" class="form-control" id="prod_disc" name="prod_disc" value="<?= $r['prod_disc'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
           <label for="prod_stock" class="form-label">商品庫存</label>
-          <input type="number" class="form-control" id="prod_stock" name="prod_stock" value="<?=$r['prod_stock']?>" required>
+          <input type="number" class="form-control" id="prod_stock" name="prod_stock" value="<?= $r['prod_stock'] ?>" required>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
           <label for="prod_update" class="form-label">商品上架日期</label>
-          <input type="date" class="form-control" id="prod_update" name="prod_update" value="<?=$r['prod_update']?>" required>
+          <input type="date" class="form-control" id="prod_update" name="prod_update" value="<?= $r['prod_update'] ?>" required>
           <div class="form-text"></div>
         </div>
         <button type="submit" class="btn btn-primary">修改</button>
@@ -113,6 +115,19 @@ include __DIR__ . '/parts/prodscript.php';
   let allPass = false;
   const modal = new bootstrap.Modal('#exampleModal');
   const modalBody = document.querySelector('#exampleModal .modal-body');
+  const img_insert = document.querySelector('#img_insert');
+  const img_name = document.querySelector('#prod_img');
+  const in_img = document.querySelector('#in_img');
+  in_img.src = `./imgs/<?= $r['prod_img'] ?>`;
+  //圖片新增後，圖片名稱放置於下方輸入格
+  img_insert.addEventListener("change", function(e) {
+    img_name.value = img_insert.files[0].name;
+    in_img.src = `./imgs/${img_insert.files[0].name}`;
+  })
+
+
+
+
 
   //AJAX
   const sendData = function(event) {
