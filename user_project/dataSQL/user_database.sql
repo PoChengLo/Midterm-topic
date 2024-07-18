@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-07-17 09:44:03
+-- 產生時間： 2024-07-18 09:31:28
 -- 伺服器版本： 8.4.0
 -- PHP 版本： 8.1.25
 
@@ -142,7 +142,7 @@ CREATE TABLE `userinfo` (
   `user_id` int NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '$2y$10$VdDD5gG8/YhOVyFde/gICeRQ7H870h46ELekpRE1NXRAfBvH9Huki',
   `nick_name` varchar(255) DEFAULT NULL,
   `user_img` varchar(255) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
@@ -346,9 +346,10 @@ INSERT INTO `userinfo` (`user_id`, `user_name`, `email`, `password`, `nick_name`
 (20241077, '林瑤黛', 'tina1@email.com', '8116b0dee91cc32f544cf9cbcf5fa7625a8609d79c8ba75f6cd92dd86ace687b', '閃電矛', 'image140.jpg', '1999-01-11', '2024-07-01 00:00:00', NULL, 'qr_code140.jpg', '0919945719', 'line_atina1', 20040, '台北市', '林瑤黛', '0919945719', 'OK', '12345678', NULL, 'Note here'),
 (20241078, '江恆恩', 'ursula1@email.com', '3a1f3d21393be4b8e74e39955b2c2a3512e10830bd78d30f3cb1454e0df13c3f', '烈焰弓', 'image141.jpg', '1992-04-21', '2024-07-01 00:00:00', NULL, 'qr_code141.jpg', '0919945720', 'line_aursula1', 30041, '新北市', '江恆恩', '0919945720', '全家', '23456789', NULL, 'Note here'),
 (20241079, '程均棟', 'victor1@email.com', '34464be34dd678136545b97ea5833c4740a8fc7095597e60fa16c5bb0d1ef7f1', '暗影盾', 'image142.jpg', '1988-12-30', '2024-07-01 00:00:00', NULL, 'qr_code142.jpg', '0919945721', 'line_avictor1', 40042, '桃園市', '程均棟', '0919945721', '711', '34567890', NULL, 'Note here'),
-(20241080, '賴容文', 'wendy1@email.com', '82bd9486604046d9b3955a6983d924bfc1ecfd6489a0e48189e3cb653a6854a2', '光明劍', 'image143.jpg', '1984-09-17', '2024-07-01 00:00:00', NULL, 'qr_code143.jpg', '0919945722', 'line_awendy1', 50043, '台中市', '賴容文', '0919945722', '萊爾富', '23456789', NULL, 'Note here'),
+(20241080, '賴容文999', 'wendy1@email.com', '82bd9486604046d9b3955a6983d924bfc1ecfd6489a0e48189e3cb653a6854a2', '光明劍', 'image143.jpg', '1984-09-17', '2024-07-01 00:00:00', NULL, 'qr_code143.jpg', '0919945722', 'line_awendy1', 50043, '台中市', '賴容文', '0919945722', '萊爾富', '23456789', NULL, 'Note here'),
 (20241081, '噴火龍', 'test@email.com', '12341234', '噴火龍', NULL, NULL, '2024-07-17 08:54:50', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20241082, '水箭龜', 'test1@email.com', '$2y$12$QjSH496pcT5CEbzjD/vtVeH03tfHKFy36d4J0Ltp3lRtee9HDxY3K', 'X進化水箭龜', NULL, NULL, '2024-07-17 09:38:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(20241082, '水箭龜', 'test1@email.com', '$2y$12$QjSH496pcT5CEbzjD/vtVeH03tfHKFy36d4J0Ltp3lRtee9HDxY3K', 'X進化水箭龜', NULL, NULL, '2024-07-17 09:38:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(20241083, '阿嘟嘟', '123qwertt@mail.com', '$2y$10$VdDD5gG8/YhOVyFde/gICeRQ7H870h46ELekpRE1NXRAfBvH9Huki', NULL, NULL, '2024-07-16', '2024-07-18 15:26:19', NULL, NULL, '0917878787', NULL, NULL, '13246', NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- 已傾印資料表的索引
@@ -413,7 +414,7 @@ ALTER TABLE `order_history`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20241083;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20241084;
 
 --
 -- 已傾印資料表的限制式
