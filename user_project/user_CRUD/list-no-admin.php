@@ -84,5 +84,23 @@ if ($totalRows) {
   </div>
 </div>
 
+<a class="col-2 btn btn-primary fixed-bottom bg-dark ml-5" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  立即登入
+</a>
+
+
+<div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header ">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    
+  </div>
+</div>
+
 <?php include __DIR__ . "/parts/scripts.php"; ?>
 <?php include __DIR__ . "/parts/html-foot.php"; ?>

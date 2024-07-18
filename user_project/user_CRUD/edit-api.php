@@ -17,7 +17,7 @@ if (empty($user_id)) {
   echo json_encode($output);
   exit;
 }
-$name = $_POST['user_name'] ?? ''; # ?? 如果 ?? 的左邊為 undefined, 就使用右邊的值
+$name = $_POST['name'] ?? ''; # ?? 如果 ?? 的左邊為 undefined, 就使用右邊的值
 if (mb_strlen($name) < 2) {
   $output['code'] = 405;
   echo json_encode($output);
