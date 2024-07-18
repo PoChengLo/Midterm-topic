@@ -9,7 +9,9 @@
     <base target="_self" />
     <meta name="description" content="" />
     <title><?= empty($title) ? 'Prod Page' : "$title - Prod Page" ?></title>
-    <style></style>
+    <style>
+
+    </style>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"

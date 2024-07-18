@@ -45,13 +45,46 @@ include __DIR__ . '/parts/prodhead.php';
         <div class="mb-3">
           <label for="prod_img" class="form-label">商品圖片</label>
           <input type="file" name="img_insert" id="img_insert" accept="image/*" />
-          <input type="text" class="form-control" id="prod_img" name="prod_img" value="<?= $r['prod_img'] ?>"  required>
+          <input type="text" class="form-control" id="prod_img" name="prod_img" value="<?= $r['prod_img'] ?>" required>
           <img class="mt-3" src="" alt="" id="in_img">
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
           <label for="prod_tag_id" class="form-label">商品標籤編號</label>
-          <input type="number" class="form-control" id="prod_tag_id" name="prod_tag_id" value="<?= $r['prod_tag_id'] ?>" required>
+          <!-- <input type="number" class="form-control" id="prod_tag_id" name="prod_tag_id" value="<?= $r['prod_tag_id'] ?>" required> -->
+          <select class="form-select" id="prod_tag_id" name="prod_tag_id">
+            <option selected disabled>請選擇類別</option>
+            <option value="1">益智</option>
+            <option value="2">親子</option>
+            <option value="3">策略</option>
+            <option value="4">派對</option>
+            <option value="5">卡牌</option>
+            <option value="6">桌上角色扮演</option>
+            <option value="7">合作</option>
+            <option value="8">競速</option>
+            <option value="9">冒險</option>
+            <option value="10">推理</option>
+            <option value="11">戰爭</option>
+            <option value="12">建設</option>
+            <option value="13">經營</option>
+            <option value="14">歷史</option>
+            <option value="15">科幻</option>
+            <option value="16">奇幻</option>
+            <option value="17">運動</option>
+            <option value="18">音樂</option>
+            <option value="19">教育</option>
+            <option value="20">恐怖</option>
+            <option value="21">經典</option>
+            <option value="22">動物</option>
+            <option value="23">自然</option>
+            <option value="24">歷險</option>
+            <option value="25">拼圖</option>
+            <option value="26">旅行</option>
+            <option value="27">社交</option>
+            <option value="28">競技</option>
+            <option value="29">創意</option>
+            <option value="30">傳統</option>
+          </select>
           <div class="form-text"></div>
         </div>
         <div class="mb-3">
