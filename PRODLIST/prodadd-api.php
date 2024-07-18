@@ -16,7 +16,7 @@ $sql = "INSERT INTO `PRODLIST`(
   ) VALUES (
   ? , ? , ? ,
   ? , ? , ? ,
-  ? , ? , NOW()
+  ? , ? , ?
   )";
 
 //準備 sql 語法，除了 ”值 ” 語法要合法
@@ -30,6 +30,7 @@ $stmt->execute([
   $_POST['prod_price'],
   $_POST['prod_disc'],
   $_POST['prod_stock'],
+  $_POST['prod_update'],
 ]);
 
 $output['success'] = !!$stmt->rowCount();

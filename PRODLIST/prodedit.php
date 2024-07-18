@@ -76,7 +76,7 @@ include __DIR__ . '/parts/prodhead.php';
         </div>
         <div class="mb-3">
           <label for="prod_update" class="form-label">商品上架日期</label>
-          <input type="date" class="form-control" id="prod_update" name="prod_update" value="<?= $r['prod_update'] ?>" required>
+          <input type="datetime-local" class="form-control" id="prod_update" name="prod_update" value="<?= $r['prod_update'] ?>" required>
           <div class="form-text"></div>
         </div>
         <button type="submit" class="btn btn-primary">修改</button>

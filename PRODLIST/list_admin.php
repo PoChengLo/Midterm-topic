@@ -29,7 +29,8 @@ if ($totalRows) {
   }
   //取得該頁資料
   $sql = sprintf(
-    "SELECT p.prod_id , p.prod_name , p.prod_img , t.tag_name , p.prod_desc , p.prod_price , p.prod_disc , p.prod_stock , p.prod_stock , p.prod_update , t.tag_name FROM PRODLIST p JOIN PRODTAG pt ON p.prod_id = pt.prod_id JOIN TAGLIST t ON pt.tag_id = t.tag_id LIMIT %d OFFSET %d",
+    // "SELECT p.prod_id , p.prod_name , p.prod_img , t.tag_name , p.prod_desc , p.prod_price , p.prod_disc , p.prod_stock , p.prod_stock , p.prod_update , t.tag_name FROM PRODLIST p JOIN PRODTAG pt ON p.prod_id = pt.prod_id JOIN TAGLIST t ON pt.tag_id = t.tag_id LIMIT %d OFFSET %d",
+    "SELECT * FROM PRODLIST LIMIT %d OFFSET %d",
     $perPage,
     ($page - 1) * $perPage
   );
@@ -90,7 +91,7 @@ if ($totalRows) {
               <td><?= $r['prod_id'] ?></td>
               <td><?= htmlentities($r['prod_name']) ?></td>
               <td><img src="./imgs/<?= $r['prod_img'] ?>" alt=""></td>
-              <td><?= $r['tag_name'] ?></td>
+              <td><?= $r['prod_tag_id'] ?></td>
               <td><?= htmlentities($r['prod_desc']) ?></td>
               <td><?= $r['prod_price'] ?></td>
               <td><?= $r['prod_disc'] ?></td>
