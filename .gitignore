@@ -4,3 +4,5 @@ imgs/
 
 db-connect-setting.php
 
+.vscode/settings.json
+.gitignore
