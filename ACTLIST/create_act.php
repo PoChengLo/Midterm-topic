@@ -8,7 +8,7 @@ $user_result = $conn->query($user_sql);
 
 <?php include __DIR__ . "/parts/html-head.php"; ?>
 <?php include __DIR__ . "/parts/navbar.php"; ?>
-<div class="container">
+<div class="container1">
   <h1>新增活動</h1>
   <form method="post" action="create_act_api.php">
     <div class="form-group">

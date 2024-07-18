@@ -20,7 +20,7 @@ $user_result = $conn->query($user_sql);
 </head>
 
 <body>
-  <div class="container">
+  <div class="container1">
     <h1>修改活動</h1>
     <form method="post" action="edit_act_api.php?id=<?php echo $id; ?>">
       <div class="form-group">

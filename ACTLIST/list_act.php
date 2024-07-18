@@ -97,25 +97,25 @@ $total_pages = ceil($count_row['total'] / $records_per_page);
         <td><?php echo $row['email']; ?></td>
         <td><?php echo mb_substr($row['act_desc'], 0, 20) . (mb_strlen($row['act_desc']) > 25 ? '...' : ''); ?></td>
         <td>
-          <a class="button" href="edit_act.php?id=<?php echo $row['act_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="but003" href="edit_act.php?id=<?php echo $row['act_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
         </td>
         <td>
-          <a class="button" href="javascript:void(0);" onclick="confirmDelete(<?php echo $row['act_id']; ?>)"><i class="bi bi-trash-fill"></i></a>
+          <a class="but003" href="javascript:void(0);" onclick="confirmDelete(<?php echo $row['act_id']; ?>)"><i class="bi bi-trash-fill"></i></a>
         </td>
       </tr>
     <?php } ?>
   </table>
   <div class="pagination">
     <?php if ($page > 1) { ?>
-      <a class="but003" href="index_act.php?page=<?php echo $page - 1; ?>&search_name=<?php echo urlencode($search_name); ?>&search_date_start=<?php echo urlencode($search_date_start); ?>&search_date_end=<?php echo urlencode($search_date_end); ?>">上一頁</a>
+      <a class="button" href="index_act.php?page=<?php echo $page - 1; ?>&search_name=<?php echo urlencode($search_name); ?>&search_date_start=<?php echo urlencode($search_date_start); ?>&search_date_end=<?php echo urlencode($search_date_end); ?>">上一頁</a>
     <?php } ?>
 
     <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
-      <a class="but003" href="index_act.php?page=<?php echo $i; ?>&search_name=<?php echo urlencode($search_name); ?>&search_date_start=<?php echo urlencode($search_date_start); ?>&search_date_end=<?php echo urlencode($search_date_end); ?>"><?php echo $i; ?></a>
+      <a class="button" href="index_act.php?page=<?php echo $i; ?>&search_name=<?php echo urlencode($search_name); ?>&search_date_start=<?php echo urlencode($search_date_start); ?>&search_date_end=<?php echo urlencode($search_date_end); ?>"><?php echo $i; ?></a>
     <?php } ?>
 
     <?php if ($page < $total_pages) { ?>
-      <a class="but003" href="index_act.php?page=<?php echo $page + 1; ?>&search_name=<?php echo urlencode($search_name); ?>&search_date_start=<?php echo urlencode($search_date_start); ?>&search_date_end=<?php echo urlencode($search_date_end); ?>">下一頁</a>
+      <a class="button" href="index_act.php?page=<?php echo $page + 1; ?>&search_name=<?php echo urlencode($search_name); ?>&search_date_start=<?php echo urlencode($search_date_start); ?>&search_date_end=<?php echo urlencode($search_date_end); ?>">下一頁</a>
     <?php } ?>
   </div>
   <br>

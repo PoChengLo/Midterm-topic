@@ -3,7 +3,7 @@
 $db_host = 'localhost';
 $db_user = 'root';
 $db_pass = 'a00580308';
-$db_name = 'activities';
+$db_name = 'new_db_0718';
 $db_port = 3306;
 
 // 建立連接
