@@ -41,9 +41,17 @@ if ($totalRows) {
 <?php include __DIR__ . '/parts/prodhead.php' ?>
 <?php include __DIR__ . '/parts/prodnavbar.php' ?>
 <div class="container-fluid my-3 ">
-  <div class="row">
-    <div class="col-3"></div>
-    <div class="col-9">
+  <div class="row d-flex align-items-center">
+    <div class="col-2 ">
+      <div class="list-group ">
+        <a href="../PRODLIST/list_admin.php" class="list-group-item list-group-item-action active list-group-item-dark" aria-current="true">
+          商品列表
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+        <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+      </div>
+    </div>
+    <div class="col-10">
       <div class="row">
         <div class="col">
           <nav aria-label="Page navigation example">
@@ -52,7 +60,7 @@ if ($totalRows) {
               for ($i = $page - 5; $i <= $page + 5; $i++) :
                 if ($i >= 1 && $i <= $totalPages) :
               ?>
-                  <li class="page-item <?= $i == $page ? 'active' : '' ?> ">
+                  <li class="page-item <?= $i == $page ? 'pagination-lg' : '' ?> ">
                     <a class="page-link" href="?page=<?= $i ?> "><?= $i ?></a>
                   </li>
               <?php
@@ -76,7 +84,7 @@ if ($totalRows) {
                 <th class="align-middle" scope="col">商品介紹</th>
                 <th class="align-middle" scope="col">商品價格</th>
                 <th class="align-middle" scope="col">商品折扣</th>
-                <th class="align-middle" scope="col" style="width:50px" >商品庫存</th>
+                <th class="align-middle" scope="col" style="width:50px">商品庫存</th>
                 <th class="align-middle" scope="col">商品上架日期時間</th>
                 <th class="align-middle"><i class="fa-regular fa-pen-to-square fs-4"></i></th>
               </tr>

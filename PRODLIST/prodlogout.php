@@ -2,6 +2,6 @@
 
 session_start();
 
-unset($_SESSION["ADMIN"]);
+unset($_SESSION['admin']);
 
 header('Location: prodindex.php');

@@ -24,9 +24,9 @@ if(!isset($pageName)){
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> -->
       <ul class="navbar-nav">
-        <?php if(isset($_SESSION['ADMIN'])) :?>
+        <?php if(isset($_SESSION['admin'])) :?>
           <li class="nav-item">
-            <a class="nav-link"><?= $_SESSION["ADMIN"]['name'] ?></a>
+            <a class="nav-link"><?= $_SESSION['admin']['user_name'] ?></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="prodlogout.php">登出</a>
