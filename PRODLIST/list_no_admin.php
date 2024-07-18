@@ -82,8 +82,8 @@ if ($totalRows) {
               <td><?= $r['prod_id'] ?></td>
               <td><?= htmlentities($r['prod_name']) ?></td>
               <td><img src="./imgs/<?= $r['prod_img'] ?>" alt=""></td>
-              <td><?= $r['prod_tag_id'] ?></td>
-              <td><?= htmlentities($r['tag_name']) ?></td>
+              <td><?= $r['tag_name'] ?></td>
+              <td><?= htmlentities($r['prod_desc']) ?></td>
               <td><?= $r['prod_price'] ?></td>
               <td><?= $r['prod_disc'] ?></td>
               <td><?= $r['prod_stock'] ?></td>
