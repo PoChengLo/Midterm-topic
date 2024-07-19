@@ -39,15 +39,13 @@ require __DIR__ . '/db-connect.php';
   }
 
   .btn {
-    border-color: #F7E6C4;
+    border-color: #999;
 
   }
 
   .bgc{
     background-color: #606C5D;
   }
-
-
 
 
 </style>
@@ -147,7 +145,7 @@ require __DIR__ . '/db-connect.php';
         .then(result => {
           console.log(result);
           if (result.success) {
-            location.href ="index_.php";
+            location.href ="index_user.php";
           } else {
             modal.show();
           }
@@ -156,5 +154,7 @@ require __DIR__ . '/db-connect.php';
         .catch(ex => console.log(ex))
     }
   };
+
+
 </script>
 <?php include __DIR__ . "/parts/html-foot.php"; ?>

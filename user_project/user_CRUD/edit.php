@@ -4,14 +4,14 @@ require __DIR__ . '/db-connect.php';
 
 $user_id = isset($_GET['user_id']) ? intval($_GET['user_id']) : 0;
 if (empty($user_id)) {
-  header('Location: index_.php'); exit;
+  header('Location: index_user.php'); exit;
 }
 $sql = "SELECT * FROM userinfo WHERE user_id=$user_id";
 
 
 $r = $pdo->query($sql)->fetch();
 if (empty($r)) {
-  header('Location: index_.php'); exit;
+  header('Location: index_user.php'); exit;
 }
 
 # header('Content-Type: application/json'); # 告訴瀏覽器內容為 JSON
@@ -86,7 +86,7 @@ if (empty($r)) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        <a href="index_.php" class="btn btn-primary">到列表頁</a>
+        <a href="index_user.php" class="btn btn-primary">到列表頁</a>
       </div>
     </div>
   </div>

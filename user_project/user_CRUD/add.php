@@ -70,7 +70,7 @@ require __DIR__ . '/db-connect.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        <a href="index_.php" class="btn btn-primary">到列表頁</a>
+        <a href="index_user.php" class="btn btn-primary">到列表頁</a>
       </div>
     </div>
   </div>
