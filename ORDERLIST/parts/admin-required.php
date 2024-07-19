@@ -5,7 +5,7 @@ if(!isset($_SESSION)){
   session_start();
 }
 
-if(!isset($_SESSION["ADMIN"])){
+if(!isset($_SESSION["admin"])){
   //如果沒有登入管理者，就跳到登入頁，結束程式
   header('Location: login.php');
   exit;
