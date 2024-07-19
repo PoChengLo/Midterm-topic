@@ -13,16 +13,14 @@ $user_sql = "SELECT user_id, user_name, email FROM userinfo";
 $user_result = $conn->query($user_sql);
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>修改活動</title>
-  <link rel="stylesheet" type="text/css" href="style_act.css">
+<?php include __DIR__ . "/parts/html-head.php"; ?>
+<?php include __DIR__ . "/parts/navbar.php"; ?>
+<title>修改活動</title>
+<link rel="stylesheet" type="text/css" href="style_act.css">
 </head>
 
 <body>
-  <div class="container">
+  <div class="container1">
     <h1>修改活動</h1>
     <form method="post" action="edit_act_api.php?id=<?php echo $id; ?>">
       <div class="form-group">
@@ -55,12 +53,10 @@ $user_result = $conn->query($user_sql);
       </div>
     </form>
   </div>
+  <?php include __DIR__ . "/parts/scripts.php"; ?>
+  <?php include __DIR__ . "/parts/html-foot.php"; ?>
 
-</body>
-
-</html>
-
-<?php
-// 關閉資料庫連接
-$conn->close();
-?>
+  <?php
+  // 關閉資料庫連接
+  $conn->close();
+  ?>

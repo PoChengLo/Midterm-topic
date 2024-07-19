@@ -11,7 +11,7 @@ $dbname = "new_db_0718"; // 你的資料庫名稱
 
 
 // 建立連接
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
 // 檢查連接
 if ($conn->connect_error) {

@@ -29,7 +29,7 @@ if (empty($r)) {
 </style>
 <?php include __DIR__ . '/parts/navbar.php' ?>
 
-<div class="container">
+<div class="container mt-5 pt-5 offset-3 mb-5">
   <div class="card col-md-8">
     <div class="card-body">
       <h5 class="card-title mb-3 ">編輯列表</h5>

@@ -10,7 +10,7 @@ $output = [
 ];
 
 // 檢查必要的欄位是否存在
-$required_fields = ['name', 'email', 'mobile', 'birthday', 'address'];
+$required_fields = ['name', 'email', 'mobile'];
 foreach ($required_fields as $field) {
     if (empty($_POST[$field])) {
         $output['errors'][] = "Field $field is required.";

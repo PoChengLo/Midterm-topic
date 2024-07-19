@@ -349,7 +349,7 @@ INSERT INTO `userinfo` (`user_id`, `user_name`, `email`, `password`, `nick_name`
 (20241080, '賴容文999', 'wendy1@email.com', '82bd9486604046d9b3955a6983d924bfc1ecfd6489a0e48189e3cb653a6854a2', '光明劍', 'image143.jpg', '1984-09-17', '2024-07-01 00:00:00', NULL, 'qr_code143.jpg', '0919945722', 'line_awendy1', 50043, '台中市', '賴容文', '0919945722', '萊爾富', '23456789', NULL, 'Note here'),
 (20241081, '噴火龍', 'test@email.com', '12341234', '噴火龍', NULL, NULL, '2024-07-17 08:54:50', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (20241082, '水箭龜', 'test1@email.com', '$2y$12$QjSH496pcT5CEbzjD/vtVeH03tfHKFy36d4J0Ltp3lRtee9HDxY3K', 'X進化水箭龜', NULL, NULL, '2024-07-17 09:38:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20241083, '阿嘟嘟', '123qwertt@mail.com', '$2y$10$VdDD5gG8/YhOVyFde/gICeRQ7H870h46ELekpRE1NXRAfBvH9Huki', NULL, NULL, '2024-07-16', '2024-07-18 15:26:19', NULL, NULL, '0917878787', NULL, NULL, '13246', NULL, NULL, NULL, NULL, NULL, NULL);
+(20241083, '阿嘟嘟', '123qwertt@mail.com', '$2y$10$VdDD5gG8/YhOVyFde/gICeRQ7H870h46ELekpRE1NXRAfBvH9Huki', '阿布嘟嘟', NULL, '2024-07-16', '2024-07-18 15:26:19', NULL, NULL, '0917878787', NULL, NULL, '13246', NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- 已傾印資料表的索引
