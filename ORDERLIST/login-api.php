@@ -41,7 +41,7 @@ if (password_verify($password, $row['password'])) {
   //已登入的狀態記錄在 session 裡
   $_SESSION['admin'] = [
     'email' => $row['email'],
-    'user_name' => $row['user_name'],
+    'nick_name' => $row['nick_name'],
     'password' => $row['password'],
   ];
 } else {

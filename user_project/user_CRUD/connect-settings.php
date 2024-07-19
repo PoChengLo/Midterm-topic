@@ -11,3 +11,9 @@ $db_user = 'root';
 $db_pass = '0917765847';
 $db_name = 'user_database';
 $db_port = 3306;
+
+// $db_host = '127.0.0.1';
+// $db_user = 'root';
+// $db_pass = '';
+// $db_name = 'new_db_0718';
+// $db_port = 3306;

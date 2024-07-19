@@ -65,10 +65,10 @@ if ($totalRows) {
           <tr>
           <th scope="col">訂單編號</th>
             <th scope="col">訂單日期</th>
-            <th scope="col">會員編號</th>
+            <!-- <th scope="col">會員編號</th>
             <th scope="col">訂單總額</th>
             <th scope="col">付款狀態</th>
-            <th scope="col">出貨日期</th>
+            <th scope="col">出貨日期</th> -->
           </tr>
         </thead>
         <tbody>
