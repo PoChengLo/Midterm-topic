@@ -124,7 +124,7 @@ require __DIR__ . '/db-connect.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        <a class="btn btn-primary" href="index_.php">到列表頁</a>
+        <a class="btn btn-primary" href="index_larp.php">到列表頁</a>
       </div>
     </div>
   </div>
