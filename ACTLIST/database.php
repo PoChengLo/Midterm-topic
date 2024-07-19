@@ -1,14 +1,15 @@
 <?php
-$servername = "localhost";
-$username = "root"; // 默認的XAMPP使用者名稱
-$password = "a00580308"; // 默認的XAMPP密碼為空
-$dbname = "activities"; // 你的資料庫名稱
-
-
-// $servername = "127.0.0.1";
+// $servername = "localhost";
 // $username = "root"; // 默認的XAMPP使用者名稱
-// $password = ""; // 默認的XAMPP密碼為空
-// $dbname = "new_db_0718"; // 你的資料庫名稱
+// $password = "a00580308"; // 默認的XAMPP密碼為空
+// $dbname = "activities"; // 你的資料庫名稱
+
+
+$db_host = '127.0.0.1';
+$db_user = 'root';
+$db_pass = '';
+$db_name = 'new_db_0718';
+$db_port = 3306;
 
 
 // 建立連接

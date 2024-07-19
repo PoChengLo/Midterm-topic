@@ -40,9 +40,10 @@ if ($totalRows) {
 
 <?php include __DIR__ . '/parts/prodhead.php' ?>
 <?php include __DIR__ . '/parts/prodnavbar.php' ?>
-<div class="container-fluid my-3 ">
+<!-- <div class="container-fluid my-3 "> -->
+<div class="container my-3 ">
   <div class="row d-flex align-items-center">
-    <div class="col-2 ">
+    <!-- <div class="col-2 ">
       <div class="list-group ">
         <a href="../user_project/user_CRUD/index_user.php" class="list-group-item list-group-item-action">A second link item</a>
         <a href="../PRODLIST/list_admin.php" class="list-group-item list-group-item-action active list-group-item-dark" aria-current="true">
@@ -51,8 +52,8 @@ if ($totalRows) {
         <a href="../LARPLIST/index_larp.php" class="list-group-item list-group-item-action">A third link item</a>
         <a href="../ACTLIST/index_act.php" class="list-group-item list-group-item-action">A third link item</a>
       </div>
-    </div>
-    <div class="col-10">
+    </div> -->
+    <div class="col">
       <div class="row">
         <div class="col">
           <nav aria-label="Page navigation example">

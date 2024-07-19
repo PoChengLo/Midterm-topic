@@ -43,6 +43,26 @@ if (!isset($pageName)) {
   </div>
 </nav>
 
+
+
+<a class="col-1 btn btn-primary fixed-bottom bg-dark ml-5" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  其他列表
+</a>
+
+
+<div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header ">
+    <ul>
+    <li class="li1"><a class="dropdown-item" href="../user_project/user_CRUD/index_user.php"><i class="fa-solid fa-skull"></i>&ensp;會員列表</a></li>
+      <br> <br>
+      <li class="li1"><a class="dropdown-item" href="../PRODLIST/list_admin.php"><i class="fa-solid fa-chess-queen"></i> &ensp;桌遊產品列表</a></li>
+      <br> <br>
+      <li class="li1"><a class="dropdown-item" href="index_larp.php"><i class="fa-solid fa-person-running"></i> &ensp;密室逃脫列表</a></li>
+      <br> <br>
+      <li class="li1"><a class="dropdown-item" href="../ACTLIST/index_act.php"><i class="fa-regular fa-calendar-days"></i> &ensp; 活動列表</a></li>
+    </ul>
+  </div>
+</div>
 <!-- <div class="container">
 
 </div> -->
