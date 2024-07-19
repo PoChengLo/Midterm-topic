@@ -15,7 +15,7 @@
       background: black;
       color: white;
     }
-    i.fa-regular{
+    i.fa-regular {
       color: red;
     }
   </style>
