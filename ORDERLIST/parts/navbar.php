@@ -28,7 +28,7 @@ if(!isset($pageName)){
         <ul class="navbar-nav">
           <?php if(isset($_SESSION['admin'])) :?>
             <li class="nav-item">
-              <a class="nav-link"><?= $_SESSION["admin"]['user_name'] ?></a>
+              <a class="nav-link"><?= $_SESSION["admin"]['nick_name'] ?></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="logout.php">登出</a>
