@@ -44,11 +44,12 @@ if ($totalRows) {
   <div class="row d-flex align-items-center">
     <div class="col-2 ">
       <div class="list-group ">
+        <a href="../user_project/user_CRUD/index_user.php" class="list-group-item list-group-item-action">A second link item</a>
         <a href="../PRODLIST/list_admin.php" class="list-group-item list-group-item-action active list-group-item-dark" aria-current="true">
           商品列表
         </a>
-        <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-        <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+        <a href="../LARPLIST/index_larp.php" class="list-group-item list-group-item-action">A third link item</a>
+        <a href="../ACTLIST/index_act.php" class="list-group-item list-group-item-action">A third link item</a>
       </div>
     </div>
     <div class="col-10">

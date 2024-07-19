@@ -1,5 +1,5 @@
 <?php
-if(!isset($pageName)){
+if (!isset($pageName)) {
   $pageName = "";
 }
 ?>
@@ -16,26 +16,28 @@ if(!isset($pageName)){
           <a class="nav-link <?= $pageName == 'prod_list' ? 'active' : '' ?>" aria-current="page" href="../PRODLIST/prodindex.php">商品列表</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?= $pageName == 'prod_add' ? 'active' : '' ?>" aria-current="page"  href="../PRODLIST/prodadd.php">新增商品</a>
+          <a class="nav-link <?= $pageName == 'prod_add' ? 'active' : '' ?>" aria-current="page" href="../PRODLIST/prodadd.php">新增商品</a>
         </li>
       </ul>
-      <!-- <form class="d-flex">
+      <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
+        <button class="btn btn-outline-dark text-white" type="submit">Search</button>
+      </form>
+      <button class="btn btn-outline-dark text-white" type="submit">Clear</button>
+
       <ul class="navbar-nav">
-        <?php if(isset($_SESSION['admin'])) :?>
+        <?php if (isset($_SESSION['admin'])) : ?>
           <li class="nav-item">
             <a class="nav-link"><?= $_SESSION['admin']['user_name'] ?></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="prodlogout.php">登出</a>
           </li>
-          <?php else : ?>
-            <li class="nav-item">
+        <?php else : ?>
+          <li class="nav-item">
             <a class="nav-link <?= $pageName == 'login' ? 'actice' : '' ?>" href="prodlogin.php">登入</a>
           </li>
-          <?php endif; ?>
+        <?php endif; ?>
       </ul>
     </div>
   </div>

@@ -23,7 +23,7 @@ $email = trim($_POST['email']);
 $password = trim($_POST['password']);
 
 //先判斷帳號對不對
-$sql = "SELECT * FROM ADMIN_LIST WHERE email = ? ";
+$sql = "SELECT * FROM USERINFO WHERE email = ? ";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$email]);
 $row = $stmt->fetch();
@@ -35,14 +35,14 @@ if(empty($row)){
 }
 
 //判斷密碼對不對
-if (password_verify($password, $row['password_hash'])) {
+if (password_verify($password, $row['password'])) {
   $output['success'] = true;
   $output['code'] = 200;
   //已登入的狀態記錄在 session 裡
-  $_SESSION['ADMIN'] = [
+  $_SESSION['admin'] = [
     'email' => $row['email'],
-    'name' => $row['name'],
-    // 'password' => $row['password_hash'],
+    'user_name' => $row['user_name'],
+    'password' => $row['password'],
   ];
 } else {
   $output['error'] = '密碼是錯的';
