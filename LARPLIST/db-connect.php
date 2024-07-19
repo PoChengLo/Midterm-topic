@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ .'/connect-settings.php';
+require __DIR__ . '/connect-settings.php';
 
 $dsn = "mysql:host={$db_host};dbname={$db_name};charset=utf8mb4";
 
@@ -14,3 +14,5 @@ $pdo = new PDO($dsn, $db_user, $db_pass, $pdo_options);
 if (!isset($_SESSION)) {
   session_start();
 }
+
+$stmt = $pdo->query("SELECT * FROM LARPLIST LIMIT 10");

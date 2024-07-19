@@ -14,10 +14,10 @@ require __DIR__ . '/db-connect.php';
 </style>
 <?php include __DIR__ . '/parts/navbar.php' ?>
 
-<div class="container">
+<div class="container offset-3 mt-5 pt-5">
   <div class="card col-8">
     <div class="card-body">
-      <h5 class="card-title mb-3 ">新增列表</h5>
+      <h5 class="card-title mb-3 p-3 ">新增密室逃脫/狼人殺</h5>
       <form name="form1" onsubmit="sendData(event)" method="post" enctype="multipart/form-data" novalidate>
         <div class="mb-3 col-md-8">
           <label for="larp_name" class="form-label">名稱</label>
@@ -124,7 +124,7 @@ require __DIR__ . '/db-connect.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        <a class="btn btn-primary" href="index_.php">到列表頁</a>
+        <a class="btn btn-primary" href="index_larp.php">到列表頁</a>
       </div>
     </div>
   </div>

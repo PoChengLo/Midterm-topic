@@ -4,7 +4,7 @@ require __DIR__ . '/db-connect.php';
 $larp_id = isset($_GET['larp_id']) ? intval($_GET['larp_id']) : 0;
 
 if (empty($larp_id)) {
-  header('Location: index_.php');
+  header('Location: index_larp.php');
   exit;
 }
 
@@ -12,7 +12,7 @@ $sql = "SELECT * FROM LARPLIST WHERE larp_id=$larp_id";
 $r = $pdo->query($sql)->fetch();
 
 if (empty($r)) {
-  header('Location: index_.php');
+  header('Location: index_larp.php');
   exit;
 }
 // echo json_encode($r);
@@ -29,7 +29,7 @@ if (empty($r)) {
 </style>
 <?php include __DIR__ . '/parts/navbar.php' ?>
 
-<div class="container">
+<div class="container mt-5 pt-5 offset-3 mb-5">
   <div class="card col-md-8">
     <div class="card-body">
       <h5 class="card-title mb-3 ">編輯列表</h5>
@@ -142,7 +142,7 @@ if (empty($r)) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        <a class="btn btn-primary" href="index_.php">到列表頁</a>
+        <a class="btn btn-primary" href="index_larp.php">到列表頁</a>
       </div>
     </div>
   </div>

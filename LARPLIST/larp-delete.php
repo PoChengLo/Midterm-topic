@@ -8,10 +8,10 @@ if (!empty($larp_id)) {
   $pdo->query($sql);
 }
 
-// $come_from = "index_.php";
+// $come_from = "index_larp.php";
 // # 如果有 referer 的 url, 就使用 referer url
 // if (isset($_SERVER['HTTP_REFERER'])) {
 //   $come_from = $_SERVER['HTTP_REFERER'];
 // }
 
-header('Location: index_.php');
+header('Location: index_larp.php');
