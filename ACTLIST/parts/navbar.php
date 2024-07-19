@@ -13,6 +13,12 @@ if (!isset($pageName)) {
 
   .li1 {
     list-style-type: none;
+    width: 300px;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 15px;
   }
 </style>
 
@@ -58,13 +64,13 @@ if (!isset($pageName)) {
 <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header ">
     <ul>
-      <li class="li1"><a class="dropdown-item" href="index_act.php">活動列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="index_act.php">會員資料</a></li>
       <br> <br>
-      <li class="li1"><a class="dropdown-item" href="index_act.php">訂單列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="index_act.php">桌遊產品列表</a></li>
       <br> <br>
       <li class="li1"><a class="dropdown-item" href="index_act.php">密室逃脫列表</a></li>
       <br> <br>
-      <li class="li1"><a class="dropdown-item" href="index_act.php">會員列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="index_act.php">活動列表</a></li>
     </ul>
   </div>
 </div>
