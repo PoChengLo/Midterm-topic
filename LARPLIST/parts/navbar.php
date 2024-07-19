@@ -72,7 +72,7 @@ if (!isset($pageName)) {
     <ul class="mt-5 ms-3">
       <li class="li1"><a class="dropdown-item" href="../user_project/user_CRUD/index_.php"><i class="fa-solid fa-skull"></i>&ensp;會員列表</a></li>
       <br> <br>
-      <li class="li1"><a class="dropdown-item" href="../PRODLIST/list_admin.php"><i class="fa-solid fa-chess-queen"></i> &ensp;桌遊產品列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="../PRODLIST/prodindex.php"><i class="fa-solid fa-chess-queen"></i> &ensp;桌遊產品列表</a></li>
       <br> <br>
       <li class="li1"><a class="dropdown-item" href="index_larp.php"><i class="fa-solid fa-person-running"></i> &ensp;密室逃脫列表</a></li>
       <br> <br>

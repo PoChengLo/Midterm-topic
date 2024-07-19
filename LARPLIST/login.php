@@ -50,7 +50,7 @@ require __DIR__ . '/db-connect.php';
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">密碼</label>
-              <input type="password" class="form-control" id="password" name="">
+              <input type="password" class="form-control" id="password" name="password">
               <div class="form-text"></div>
             </div>
             <button type="submit" class="btn btn-primary">登入</button>
@@ -93,15 +93,15 @@ require __DIR__ . '/db-connect.php';
 
   const sendData = e => {
     e.preventDefault();
-    emailField.nextElementSibling.innerHtml = '';
+    emailField.nextElementSibling.innerHTML = '';
     emailField.style.border = '1px solid #CCC';
 
     let isPass = true;
 
-    if (!validateEmail(email).value) {
+    if (!validateEmail(email.value)) {
       isPass = false;
       emailField.nextElementSibling.innerHTML = '請輸入正確的電子郵件';
-      emailField.style.border = '1px solod red';
+      emailField.style.border = '1px solid red';
     }
 
     if (isPass) {
@@ -114,7 +114,7 @@ require __DIR__ . '/db-connect.php';
         .then(result => {
           console.log(result);
           if (result.success) {
-            location.href = "index_larp.php";
+            location.href = 'index_larp.php';
           } else {
             modal.show();
           }
