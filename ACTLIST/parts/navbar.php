@@ -13,26 +13,19 @@ if (!isset($pageName)) {
 
   .li1 {
     list-style-type: none;
-    width: 300px;
-    background-color: #212529;
-    color: white;
-    text-align: center;
-    line-height: 100px;
-    border-radius: 15px;
   }
 </style>
 
-
-<nav class="navbar navbar-expand-lg  navbar-dark bg-dark mb-5">
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index_act.php">LOGO</a>
+    <a class="navbar-brand" href="index_user.php"><img src="./img/Design_sm.png" alt="Navbar" width="150px" height="62px"> </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link">活動列表</a>
+          <a class="nav-link <?= $pageName == 'ab_list' ? 'active' : '' ?>" href="index_act.php">活動列表</a>
         </li>
       </ul>
 
@@ -55,16 +48,19 @@ if (!isset($pageName)) {
 </nav>
 </div>
 
-
 <a class="col-1 btn btn-primary fixed-bottom bg-dark ml-5" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
   其他列表
 </a>
 
 
+<a class="col-1 btn btn-primary fixed-bottom bg-dark ml-5" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  其他列表
+</a>
+
 <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header ">
-    <ul>
-    <li class="li1"><a class="dropdown-item" href="../user_project/user_CRUD/index_user.php"><i class="fa-solid fa-skull"></i>&ensp;會員列表</a></li>
+    <ul class="mt-5 ms-3">
+      <li class="li1"><a class="dropdown-item" href="../user_project/user_CRUD/index_user.php"><i class="fa-solid fa-skull"></i>&ensp;會員列表</a></li>
       <br> <br>
       <li class="li1"><a class="dropdown-item" href="../PRODLIST/list_admin.php"><i class="fa-solid fa-chess-queen"></i> &ensp;桌遊產品列表</a></li>
       <br> <br>
@@ -74,3 +70,6 @@ if (!isset($pageName)) {
     </ul>
   </div>
 </div>
+
+
+<!-- <img class="row" src="./img/dragon-and-dice.png" alt="" width="380px" height="140px"> -->
