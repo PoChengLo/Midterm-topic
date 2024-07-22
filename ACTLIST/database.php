@@ -1,8 +1,14 @@
 <?php
 
-$db_host = 'localhost';
+// $db_host = 'localhost';
+// $db_user = 'root';
+// $db_pass = 'a00580308';
+// $db_name = 'new_db_0718';
+// $db_port = 3306;
+
+$db_host = '127.0.0.1';
 $db_user = 'root';
-$db_pass = 'a00580308';
+$db_pass = '';
 $db_name = 'new_db_0718';
 $db_port = 3306;
 

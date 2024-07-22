@@ -12,6 +12,9 @@ if (!isset($pageName)) {
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a href="#" class="nav-brand"><img src="./parts/Design_sm.png" alt="" ></a>
+        </li>
         <li class="nav-item">
           <a class="nav-link <?= $pageName == 'prod_list' ? 'active' : '' ?>" aria-current="page" href="../PRODLIST/prodindex.php">商品列表</a>
         </li>
