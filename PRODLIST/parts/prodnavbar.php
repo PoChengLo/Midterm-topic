@@ -12,13 +12,13 @@ if (!isset($pageName)) {
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a href="#" class="nav-brand"><img src="./parts/Design_sm.png" alt="" ></a>
-        </li>
         <li class="nav-item">
+          <a href="#" class="nav-brand"><img src="./parts/Design_sm.png" alt=""></a>
+        </li>
+        <li class="nav-item" style="display:flex; align-items: center;">
           <a class="nav-link <?= $pageName == 'prod_list' ? 'active' : '' ?>" aria-current="page" href="../PRODLIST/prodindex.php">商品列表</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" style="display:flex; align-items: center;">
           <a class="nav-link <?= $pageName == 'prod_add' ? 'active' : '' ?>" aria-current="page" href="../PRODLIST/prodadd.php">新增商品</a>
         </li>
       </ul>
@@ -56,15 +56,15 @@ if (!isset($pageName)) {
 <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color: black;">
   <div class="offcanvas-header ">
     <ul>
-      <li class="li1"><img src="./parts/dragon-and-dice.png" alt="" style="width:300px; height:150px" ></li>
+      <li class="li1"><img src="./parts/dragon-and-dice.png" alt="" style="width:300px; height:150px"></li>
       <br><br>
-    <li class="li1"><a class="dropdown-item" href="../user_project/user_CRUD/index_user.php"><i class="fa-solid fa-skull"></i>&ensp;會員列表</a></li>
+      <li class="li1" hover=""><a class="dropdown-item" href="../user_project/user_CRUD/index_user.php" style="color:white"><i class="fa-solid fa-skull" style="color:white"></i>&ensp;會員列表</a></li>
       <br> <br>
-      <li class="li1" style="color:white"><a class="dropdown-item"  href="../PRODLIST/list_admin.php" style="color:white"><i class="fa-solid fa-chess-queen" style="color:white"></i> &ensp;桌遊產品列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="../PRODLIST/list_admin.php" style="color:white"><i class="fa-solid fa-chess-queen" style="color:white"></i> &ensp;桌遊產品列表</a></li>
       <br> <br>
-      <li class="li1"><a class="dropdown-item" href="../LARPLIST/index_larp.php"><i class="fa-solid fa-person-running"></i> &ensp;密室逃脫列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="../LARPLIST/index_larp.php" style="color:white"><i class="fa-solid fa-person-running" style="color:white"></i> &ensp;密室逃脫列表</a></li>
       <br> <br>
-      <li class="li1"><a class="dropdown-item" href="../ACTLIST/index_act.php"><i class="fa-regular fa-calendar-days"></i> &ensp; 活動列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="../ACTLIST/index_act.php" style="color:white"><i class="fa-regular fa-calendar-days" style="color:white"></i> &ensp; 活動列表</a></li>
     </ul>
   </div>
 </div>
