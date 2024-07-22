@@ -53,12 +53,14 @@ if (!isset($pageName)) {
 </a>
 
 
-<div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color: black;">
   <div class="offcanvas-header ">
     <ul>
+      <li class="li1"><img src="./parts/dragon-and-dice.png" alt="" style="width:300px; height:150px" ></li>
+      <br><br>
     <li class="li1"><a class="dropdown-item" href="../user_project/user_CRUD/index_user.php"><i class="fa-solid fa-skull"></i>&ensp;會員列表</a></li>
       <br> <br>
-      <li class="li1"><a class="dropdown-item" href="../PRODLIST/list_admin.php"><i class="fa-solid fa-chess-queen"></i> &ensp;桌遊產品列表</a></li>
+      <li class="li1" style="color:white"><a class="dropdown-item"  href="../PRODLIST/list_admin.php" style="color:white"><i class="fa-solid fa-chess-queen" style="color:white"></i> &ensp;桌遊產品列表</a></li>
       <br> <br>
       <li class="li1"><a class="dropdown-item" href="../LARPLIST/index_larp.php"><i class="fa-solid fa-person-running"></i> &ensp;密室逃脫列表</a></li>
       <br> <br>
