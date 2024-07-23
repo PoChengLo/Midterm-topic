@@ -30,10 +30,17 @@
             <li class="nav-item">
               <a class="nav-link" href="add.php">新增</a>
             </li>
+            
           </ul>
+
           <ul class="navbar-nav ms-auto mb-lg-0">
+            <form class="d-flex me-5" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-warning" type="submit">Search</button>
+              <button class="btn btn-warning ms-2" type="submit">Clear</button>
+            </form>
             <li class="nav-item">
-              <p class="nav-link pe-3"><?= $_SESSION["admin"]['nick_name'] ?></p>
+              <a class="nav-link pe-3 ms-5"><?= $_SESSION["admin"]['nick_name'] ?></a>
             </li>
             <li class="nav-item">
               <a class="nav-link pe-5" href="login.php">登出</a>
