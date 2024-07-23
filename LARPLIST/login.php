@@ -83,13 +83,13 @@ require __DIR__ . '/db-connect.php';
 
 <?php include __DIR__ . "/parts/scripts.php"; ?>
 <script>
-  const emailField = document.form1.email
-  const modal = new bootstrap.Modal('#exampleModal')
+  const emailField = document.form1.email;
+  const modal = new bootstrap.Modal('#exampleModal');
 
   function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
-  }
+  };
 
   const sendData = e => {
     e.preventDefault();
@@ -98,11 +98,12 @@ require __DIR__ . '/db-connect.php';
 
     let isPass = true;
 
-    if (!validateEmail(email.value)) {
+    if (!validateEmail(emailField.value)) {
       isPass = false;
       emailField.nextElementSibling.innerHTML = '請輸入正確的電子郵件';
       emailField.style.border = '1px solid red';
-    }
+    };
+
 
     if (isPass) {
       const fd = new FormData(document.form1);
@@ -119,7 +120,7 @@ require __DIR__ . '/db-connect.php';
             modal.show();
           }
         })
-        .catch(ex => console.log(ex))
+        .catch(ex => console.log(ex));
     }
   };
 </script>

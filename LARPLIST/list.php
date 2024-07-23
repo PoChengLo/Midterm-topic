@@ -128,7 +128,7 @@ if ($totalRows) {
               <td><?= $r['larp_img'] ?></td>
               <td><?= htmlentities($r['larp_name']) ?></td>
               <td><?= htmlentities($r['larp_info']) ?></td>
-              <td class="col-3"><?= mb_substr($r['larp_desc'], 0, 30) . (mb_strlen($r['larp_desc']) > 55 ? '...' : ''); ?></td>
+              <td class="col-3"><?= htmlentities($r['larp_desc']) ?></td>
               <td><?= $r['larp_people'] ?></td>
               <td><?= $r['larp_tag_id'] ?></td>
               <td><?= $r['larp_date'] ?></td>

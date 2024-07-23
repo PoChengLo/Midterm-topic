@@ -15,4 +15,4 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
-$stmt = $pdo->query("SELECT * FROM LARPLIST LIMIT 10");
+// $stmt = $pdo->query("SELECT * FROM LARPLIST LIMIT 10");

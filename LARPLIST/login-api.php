@@ -15,14 +15,14 @@ if (!isset($_POST['email']) or !isset($_POST['password'])) {
   $output['code'] = 401;
   echo json_encode($output);
   exit;
-}
+};
 
 #去除頭尾空白字元
 $email = trim($_POST['email']);
 $password = trim($_POST['password']);
 
 #先判斷帳號對不對
-$sql = "SELECT * FROM USERINFO WHERE email=?";
+$sql = "SELECT * FROM userinfo WHERE email=?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$email]);
 $row = $stmt->fetch();
@@ -31,7 +31,7 @@ if (empty($row)) {
   $output["code"] = 403;
   echo json_encode($output);
   exit;
-}
+};
 
 #判斷密碼對不對
 if (password_verify($password, $row["password"])) {
@@ -46,6 +46,10 @@ if (password_verify($password, $row["password"])) {
 } else {
   $output['error'] = '密碼是錯的';
   $output['code'] = 405;
-}
+};
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
+
+/* 傑尼龜密碼
+rasmuslerdorf
+*/
