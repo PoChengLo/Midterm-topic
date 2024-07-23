@@ -9,16 +9,20 @@ if (!isset($pageName)) {
 
     font-weight: 900;
     border-radius: 6px;
+
   }
 
-  #offcanvasExample {
-    background-color: #272727;
-    color: aliceblue;
+  .li1 {
+    list-style-type: none;
+  }
+
+  .li1:hover:not(:first-child) {
+    border: 1px dashed white;
   }
 </style>
-<div class="container mb-5">
-  <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
-    <div class="container-fluid">
+<div class=" mb-5 ">
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-dark ">
+    <div class="container-fluid ">
       <a class="navbar-brand" href="index_user.php"><img src="./img/Design_sm.png" alt="Navbar" width="150px" height="62px"> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -59,22 +63,18 @@ if (!isset($pageName)) {
   其他列表
 </a>
 
-<div class="offcanvas offcanvas-start container" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="row row-cols-1">
-    <img class="mt-3" src="./img/dragon-and-dice.png" alt="" width="320px" height="140px">
-    <div class="offcanvas-header ">
-
-
-
-      <ul class="mt-5 ms-3">
-        <li class="li1"><a class="dropdown-item" href="../user_project/user_CRUD/index_.php"><i class="fa-solid fa-skull"></i>&ensp;會員列表</a></li>
-        <br> <br>
-        <li class="li1"><a class="dropdown-item" href="../PRODLIST/list_admin.php"><i class="fa-solid fa-chess-queen"></i> &ensp;桌遊產品列表</a></li>
-        <br> <br>
-        <li class="li1"><a class="dropdown-item" href="index_larp.php"><i class="fa-solid fa-person-running"></i> &ensp;密室逃脫列表</a></li>
-        <br> <br>
-        <li class="li1"><a class="dropdown-item" href="../ACTLIST/index_act.php"><i class="fa-regular fa-calendar-days"></i> &ensp; 活動列表</a></li>
-      </ul>
-    </div>
+<div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color: black;">
+  <div class="offcanvas-header ">
+    <ul>
+      <li class="li1"><img src="./img/dragon-and-dice.png" alt="" style="width:300px; height:150px"></li>
+      <br><br>
+      <li class="li1" hover=""><a class="dropdown-item" href="../user_project/user_CRUD/index_user.php" style="color:white"><i class="fa-solid fa-skull" style="color:white"></i> &ensp;會員列表</a></li>
+      <br> <br>
+      <li class="li1"><a class="dropdown-item" href="../PRODLIST/list_admin.php" style="color:white"><i class="fa-solid fa-chess-queen" style="color:white"></i> &ensp;桌遊產品列表</a></li>
+      <br> <br>
+      <li class="li1"><a class="dropdown-item" href="../LARPLIST/index_larp.php" style="color:white"><i class="fa-solid fa-person-running" style="color:white"></i> &ensp;密室逃脫列表</a></li>
+      <br> <br>
+      <li class="li1"><a class="dropdown-item" href="../ACTLIST/index_act.php" style="color:white"><i class="fa-regular fa-calendar-days" style="color:white"></i> &ensp; 活動列表</a></li>
+    </ul>
   </div>
 </div>

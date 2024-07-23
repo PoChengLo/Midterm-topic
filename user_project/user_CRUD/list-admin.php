@@ -37,9 +37,14 @@ if ($totalRows) {
 ?>
 <?php include __DIR__ . "/parts/html-head.php"; ?>
 <?php include __DIR__ . "/parts/navbar.php"; ?>
+
+
+
 <div class="container">
   <div class="row">
     <div class="col">
+
+
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <?php for ($i = $page - 5; $i <= $page + 5; $i++) :
@@ -53,21 +58,32 @@ if ($totalRows) {
           endfor; ?>
         </ul>
       </nav>
+
+      <div class="dropdown mt-3 mb-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          排序方式
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#" method="get" onClick="submit()">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <table class="table table-bordered table-striped">
-        <thead>
+        <thead class="table-dark">
           <tr>
-            <th><i class="fa-solid fa-trash"></i></th>
+            <th><i class="fa-solid fa-circle-xmark"></i></th>
             <th>編號</th>
             <th>姓名</th>
             <th>電郵</th>
             <th>手機</th>
             <th>生日</th>
             <th>地址</th>
-            <th><i class="fa-solid fa-pen-to-square"></i></th>
+            <th><i class="fa-solid fa-pen-nib"></i></th>
           </tr>
         </thead>
         <tbody>

@@ -8,8 +8,8 @@ require __DIR__ . '/db-connect.php';
 <?php include __DIR__ . "/parts/html-head.php"; ?>
 <style>
   * {
-    
-    max-width:100%;
+
+    max-width: 100%;
   }
 
   .full-height {
@@ -32,7 +32,7 @@ require __DIR__ . '/db-connect.php';
     color: red;
   }
 
-  .card{
+  .card {
     width: 25rem;
     border-color: #F7E6C4;
     color: #FFF4F4;
@@ -43,47 +43,45 @@ require __DIR__ . '/db-connect.php';
 
   }
 
-  .bgc{
+  .bgc {
     background-color: #606C5D;
   }
-
-
 </style>
 
 <div class="bgc">
   <div class="row no-gutters full-height">
     <!-- Left side full-height image -->
     <div class="col-md-6 bg-image">
-      <img src="./img/7IOV.gif" alt="Background Image">
+      <img src="./img/7IOV.gif" alt="Background Image" style="box-shadow: rgba(0, 0, 0, 1) 0px 0px 50px;">
     </div>
     <!-- Right side content -->
     <div class="col-md-4 d-flex align-items-center justify-content-center ">
-      <div >
-        <div class="card " >
-        <img src="./img/bg.png" class="card-img" alt="">
-        <div class="card-img-overlay">
-          <div class="card-body ">
-            <h5 class="card-title">登入</h5>
+      <div>
+        <div class="card ">
+          <img src="./img/bg.png" class="card-img" alt="">
+          <div class="card-img-overlay">
+            <div class="card-body ">
+              <h5 class="card-title">登入</h5>
 
-            <form name="form1" onsubmit="sendData(event)" novalidate>
-              <div class="mb-3">
-                <label for="email" class="form-label">帳號 (Email)</label>
-                <input type="email" class="form-control" name="email" id="email">
-                <div class="form-text"></div>
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">密碼</label>
-                <input type="password" class="form-control" name="password" id="password">
-                <div class="form-text"></div>
-              </div>
-              <button type="submit" class="btn btn-secondary">登入</button>
-            </form>
+              <form name="form1" onsubmit="sendData(event)" novalidate>
+                <div class="mb-3">
+                  <label for="email" class="form-label">帳號 (Email)</label>
+                  <input type="email" class="form-control" name="email" id="email">
+                  <div class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">密碼</label>
+                  <input type="password" class="form-control" name="password" id="password">
+                  <div class="form-text"></div>
+                </div>
+                <button type="submit" class="btn btn-secondary">登入</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <!-- Modal -->
@@ -108,7 +106,6 @@ require __DIR__ . '/db-connect.php';
 
 <?php include __DIR__ . "/parts/scripts.php"; ?>
 <script>
-
   const emailField = document.form1.email;
   const modal = new bootstrap.Modal('#exampleModal');
 
@@ -145,16 +142,14 @@ require __DIR__ . '/db-connect.php';
         .then(result => {
           console.log(result);
           if (result.success) {
-            location.href ="index_user.php";
+            location.href = "index_user.php";
           } else {
             modal.show();
           }
-          
+
         })
         .catch(ex => console.log(ex))
     }
   };
-
-
 </script>
 <?php include __DIR__ . "/parts/html-foot.php"; ?>
