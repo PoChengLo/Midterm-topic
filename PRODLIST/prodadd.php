@@ -197,7 +197,7 @@ include __DIR__ . '/parts/prodscript.php';
         })
         .catch(error => {
           console.error('Error:', error);
-          modalBody.innerHTML = '<div class="alert alert-danger" role="alert">系統錯誤，請稍後再試</div>';
+          modalBody.innerHTML = '<div class="alert alert-danger" role="alert">請確認資料內容</div>';
           modal.show();
         });
     }
