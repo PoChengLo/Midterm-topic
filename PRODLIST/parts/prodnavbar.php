@@ -2,7 +2,18 @@
 if (!isset($pageName)) {
   $pageName = "";
 }
+
+// $where = ' WHERE 1 ';  # SQL 條件開頭
+// # 搜尋功能，搜尋兩個欄位：name, mobile
+// $search = $_GET['search'] ?? '';  # ?? 的左側若為 undefined 則使用右側的值
+// if ($search) {
+//   $search_esc = $pdo->quote("%{$search}%");  # SQL 特殊字元跳脫並包裹單引號
+//   $where .= " AND ( `prod_name` LIKE $search_esc OR `prod_desc` LIKE $search_esc ) ";
+// }
+//value="<?= htmlentities($search) 
 ?>
+
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -23,9 +34,13 @@ if (!isset($pageName)) {
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark text-white" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+        <button class="btn btn-outline-dark text-white" type="submit"  >Search</button>
       </form>
+      <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value="<?= htmlentities($search)?>">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
       <button class="btn btn-outline-dark text-white" type="submit">Clear</button>
 
       <ul class="navbar-nav">
@@ -56,7 +71,7 @@ if (!isset($pageName)) {
 <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color: black;">
   <div class="offcanvas-header ">
     <ul>
-      <li class="li1"><img src="./parts/dragon-and-dice.png" alt="" style="width:300px; height:150px"></li>
+      <li class="li1" style="border: none;"><img src="./parts/dragon-and-dice.png" alt="" style="width:300px; height:150px"></li>
       <br><br>
       <li class="li1" hover=""><a class="dropdown-item" href="../user_project/user_CRUD/index_user.php" style="color:white"><i class="fa-solid fa-skull" style="color:white"></i>&ensp;會員列表</a></li>
       <br> <br>
