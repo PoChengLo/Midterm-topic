@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
 
-$title = "新增通訊錄";
+$title = "新增會員資料";
 $pageName = "ab_add";
 
 require __DIR__ . '/db-connect.php';
@@ -20,7 +20,7 @@ require __DIR__ . '/db-connect.php';
       <div class="card">
 
         <div class="card-body">
-          <h5 class="card-title">新增通訊錄</h5>
+          <h5 class="card-title">新增會員資料</h5>
 
           <form name="form1" onsubmit="sendData(event)" novalidate>
             <div class="mb-3">

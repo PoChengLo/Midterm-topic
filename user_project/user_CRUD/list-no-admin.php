@@ -1,5 +1,5 @@
 <?php
-$title = "通訊錄列表";
+$title = "會員資料列表";
 $pageName = "ab_list";
 
 $perPage = 30; # 表示一頁最多有 20 筆
@@ -98,7 +98,7 @@ if ($totalRows) {
     <div>
       Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
     </div>
-    
+
   </div>
 </div>
 

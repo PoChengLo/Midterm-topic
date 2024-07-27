@@ -4,14 +4,16 @@ require __DIR__ . '/db-connect.php';
 
 $user_id = isset($_GET['user_id']) ? intval($_GET['user_id']) : 0;
 if (empty($user_id)) {
-  header('Location: index_user.php'); exit;
+  header('Location: index_user.php');
+  exit;
 }
 $sql = "SELECT * FROM userinfo WHERE user_id=$user_id";
 
 
 $r = $pdo->query($sql)->fetch();
 if (empty($r)) {
-  header('Location: index_user.php'); exit;
+  header('Location: index_user.php');
+  exit;
 }
 
 # header('Content-Type: application/json'); # 告訴瀏覽器內容為 JSON
@@ -30,38 +32,33 @@ if (empty($r)) {
       <div class="card">
 
         <div class="card-body">
-          <h5 class="card-title">編輯通訊錄</h5>
+          <h5 class="card-title">編輯會員資料</h5>
 
           <form name="form1" onsubmit="sendData(event)" novalidate>
             <input type="hidden" name="user_id" value="<?= $r['user_id'] ?>">
             <div class="mb-3">
               <label for="name" class="form-label">姓名</label>
-              <input type="text" class="form-control" name="name" 
-              value="<?= htmlentities($r['user_name']) ?>" id="name" required>
+              <input type="text" class="form-control" name="name" value="<?= htmlentities($r['user_name']) ?>" id="name" required>
               <div class="form-text"></div>
             </div>
 
             <div class="mb-3">
               <label for="email" class="form-label">email</label>
-              <input type="email" class="form-control" name="email"
-              value="<?= $r['email'] ?>" id="email">
+              <input type="email" class="form-control" name="email" value="<?= $r['email'] ?>" id="email">
               <div class="form-text"></div>
             </div>
             <div class="mb-3">
               <label for="mobile" class="form-label">手機</label>
-              <input type="text" class="form-control" name="mobile"
-              value="<?= $r['mobile'] ?>" id="mobile">
+              <input type="text" class="form-control" name="mobile" value="<?= $r['mobile'] ?>" id="mobile">
               <div class="form-text"></div>
             </div>
             <div class="mb-3">
               <label for="birthday" class="form-label">生日</label>
-              <input type="date" class="form-control" name="birthday"
-              value="<?= $r['birthday'] ?>" id="birthday">
+              <input type="date" class="form-control" name="birthday" value="<?= $r['birthday'] ?>" id="birthday">
             </div>
             <div class="mb-3">
               <label for="address" class="form-label">地址</label>
-              <textarea class="form-control" name="address" id="address" 
-              rows="3"><?= htmlentities($r['address']) ?></textarea>
+              <textarea class="form-control" name="address" id="address" rows="3"><?= htmlentities($r['address']) ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary">修改</button>
           </form>

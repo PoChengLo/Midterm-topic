@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
-$title = "通訊錄列表";
+$title = "會員資料列表";
 $pageName = "ab_list";
 
 $perPage = 30; # 表示一頁最多有 30 筆
@@ -75,91 +75,92 @@ if ($totalRows) {
       </nav>
 
 
+      <div style=" display: flex;justify-content: space-between;">
+        <div class="dropdown  mb-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            排序方式
+          </button>
 
-      <div class="dropdown mt-3 mb-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          排序方式
-        </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="?sort=user_id">編號排序</a></li>
+            <li><a class="dropdown-item" href="?sort=user_name">姓名排序</a></li>
+            <li><a class="dropdown-item" href="?sort=email">Email排序</a></li>
+            <li><a class="dropdown-item" href="?sort=mobile">手機排序</a></li>
+            <li><a class="dropdown-item" href="?sort=birthday">生日排序</a></li>
 
-          <li><a class="dropdown-item" href="?sort=user_id">編號排序</a></li>
-          <li><a class="dropdown-item" href="?sort=user_name">姓名排序</a></li>
-          <li><a class="dropdown-item" href="?sort=email">Email排序</a></li>
-          <li><a class="dropdown-item" href="?sort=mobile">手機排序</a></li>
-          <li><a class="dropdown-item" href="?sort=birthday">生日排序</a></li>
+          </ul>
 
-        </ul>
+        </div>
 
+
+
+        <form class="d-flex" method="GET">
+          <div style="width:400px;">
+            <div class="input-group  ">
+              <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+              <input type="search" class="form-control" placeholder="請輸入關鍵字" aria-describedby="button-addon2" name="search" value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+              <button class="btn btn-outline-secondary" id="button-addon2" type="submit">搜尋</button>
+            </div>
+          </div>
+        </form>
       </div>
-    </div>
-  </div>
-  <form class="d-flex" method="GET" action="">
-    <div class="container mt-5">
-      <div class="input-group mb-3 ">
-        <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-        <input type="search" class="form-control" placeholder="請輸入關鍵字" aria-describedby="button-addon2" name="search" value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
-        <button class="btn btn-outline-secondary" id="button-addon2" type="submit">搜尋</button>
-      </div>
 
-    </div>
-  </form>
-
-  <div class="row">
-    <div class="col">
-      <table class="table table-bordered table-striped">
-        <thead class="table-dark">
-          <tr>
-            <th><i class="fa-solid fa-circle-xmark"></i></th>
-            <th>編號</th>
-            <th>姓名</th>
-            <th>電郵</th>
-            <th>手機</th>
-            <th>生日</th>
-            <th>地址</th>
-            <th><i class="fa-solid fa-pen-nib"></i></th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($rows as $r) : ?>
-            <tr>
-              <td>
-                <!--
+      <div class="row">
+        <div class="col">
+          <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th><i class="fa-solid fa-circle-xmark"></i></th>
+                <th>編號</th>
+                <th>姓名</th>
+                <th>電郵</th>
+                <th>手機</th>
+                <th>生日</th>
+                <th>地址</th>
+                <th><i class="fa-solid fa-pen-nib"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($rows as $r) : ?>
+                <tr>
+                  <td>
+                    <!--
                 <a href="del.php?user_id=<?= $r['user_id'] ?>" onclick="return confirm(`是否要刪除編號為 <?= $r['user_id'] ?> 的資料?`)">
           -->
-                <a href="javascript: deleteOne(<?= $r['user_id'] ?>)">
-                  <i class="fa-solid fa-trash"></i>
-                </a>
-              </td>
-              <td><?= $r['user_id'] ?></td>
-              <td><?= $r['user_name'] ?></td>
-              <td><?= $r['email'] ?></td>
-              <td><?= $r['mobile'] ?></td>
-              <td><?= $r['birthday'] ?></td>
-              <td><?= htmlentities($r['address']) ?></td>
-              <td>
-                <a href="edit.php?user_id=<?= $r['user_id'] ?>">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </a>
-              </td>
-            </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
+                    <a href="javascript: deleteOne(<?= $r['user_id'] ?>)">
+                      <i class="fa-solid fa-trash"></i>
+                    </a>
+                  </td>
+                  <td><?= $r['user_id'] ?></td>
+                  <td><?= $r['user_name'] ?></td>
+                  <td><?= $r['email'] ?></td>
+                  <td><?= $r['mobile'] ?></td>
+                  <td><?= $r['birthday'] ?></td>
+                  <td><?= htmlentities($r['address']) ?></td>
+                  <td>
+                    <a href="edit.php?user_id=<?= $r['user_id'] ?>">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
 
 
-<?php include __DIR__ . "/parts/scripts.php"; ?>
-<script>
-  const data = <?= json_encode($rows)  ?>;
-  const deleteOne = (user_id) => {
-    if (confirm(`是否要刪除編號為 ${user_id} 的資料??`)) {
-      location.href = `del.php?user_id=${user_id}`;
-    }
-  };
-</script>
+    <?php include __DIR__ . "/parts/scripts.php"; ?>
+    <script>
+      const data = <?= json_encode($rows)  ?>;
+      const deleteOne = (user_id) => {
+        if (confirm(`是否要刪除編號為 ${user_id} 的資料??`)) {
+          location.href = `del.php?user_id=${user_id}`;
+        }
+      };
+    </script>
 
-<?php include __DIR__ . "/parts/html-foot.php"; ?>
+    <?php include __DIR__ . "/parts/html-foot.php"; ?>
