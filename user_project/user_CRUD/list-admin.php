@@ -25,16 +25,31 @@ if ($totalRows) {
   }
 
   # 取得該頁的資料
-  $sql = sprintf(
-    "SELECT * FROM userinfo ORDER BY user_id DESC LIMIT %s, %s",
-    ($page - 1) * $perPage,
-    $perPage
-  );
 
+  // 排序功能
+  $sort = isset($_GET['sort']) ? $_GET['sort'] : 'user_id';
+  $allowed_sort = ['user_id', 'user_name', 'email', 'birthday', 'mobile'];
+  if (!in_array($sort, $allowed_sort)) {
+    $sort = 'user_id';
+  };
+  // 排序功能tbc
+
+  // 搜尋功能
+  $search = isset($_GET['search']) ? $_GET['search'] : '';
+  $search = htmlspecialchars($search);
+  $search_sql = $search ? "WHERE user_name LIKE '%$search%' OR email LIKE '%$search%' OR mobile LIKE '%$search%' OR address LIKE '%$search%'" : '';
+
+
+  // 搜尋功能tbc
+
+
+  $sql = "SELECT * FROM userinfo $search_sql ORDER BY $sort LIMIT " . (($page - 1) * $perPage) . "," . ($perPage);
   $rows = $pdo->query($sql)->fetchAll();
-}
+};
 
 ?>
+
+
 <?php include __DIR__ . "/parts/html-head.php"; ?>
 <?php include __DIR__ . "/parts/navbar.php"; ?>
 
@@ -59,18 +74,37 @@ if ($totalRows) {
         </ul>
       </nav>
 
+
+
       <div class="dropdown mt-3 mb-3">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           排序方式
         </button>
+
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#" method="get" onClick="submit()">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+          <li><a class="dropdown-item" href="?sort=user_id">編號排序</a></li>
+          <li><a class="dropdown-item" href="?sort=user_name">姓名排序</a></li>
+          <li><a class="dropdown-item" href="?sort=email">Email排序</a></li>
+          <li><a class="dropdown-item" href="?sort=mobile">手機排序</a></li>
+          <li><a class="dropdown-item" href="?sort=birthday">生日排序</a></li>
+
         </ul>
+
       </div>
     </div>
   </div>
+  <form class="d-flex" method="GET" action="">
+    <div class="container mt-5">
+      <div class="input-group mb-3 ">
+        <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="search" class="form-control" placeholder="請輸入關鍵字" aria-describedby="button-addon2" name="search" value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+        <button class="btn btn-outline-secondary" id="button-addon2" type="submit">搜尋</button>
+      </div>
+
+    </div>
+  </form>
+
   <div class="row">
     <div class="col">
       <table class="table table-bordered table-striped">
