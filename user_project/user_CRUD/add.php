@@ -11,11 +11,13 @@ require __DIR__ . '/db-connect.php';
 <style>
   form .mb-3 .form-text {
     color: red;
+
+
   }
 </style>
 <?php include __DIR__ . "/parts/navbar.php"; ?>
 <div class="container">
-  <div class="row">
+  <div class="row gx-5">
     <div class="col-6">
       <div class="card">
 
@@ -47,12 +49,54 @@ require __DIR__ . '/db-connect.php';
               <label for="address" class="form-label">地址</label>
               <textarea class="form-control" name="address" id="address" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <input type="hidden" name="user_img" id="user_img">
+            <button type="submit" class="btn btn-dark">送出</button>
           </form>
         </div>
       </div>
     </div>
+    <div class="card ms-3" style="width: 25rem; ">
+      <img id="previewImage" src="./img/image01.jpg" class="card-img-top mt-3" alt="Preview" style="width:250px;border: 2px solid #333;">
+      <div class="card-body">
+        <h5 class="card-title">自訂您的使用者頭像</h5>
+        <p class="card-text">用我們高度客製化的圖片來展現您的個人丰采吧！相信這裡一定有契合你靈魂的人物！</p>
+
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          選擇圖片
+        </a>
+
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+
+            <div class="container">
+              <div class="row">
+                <img src="./img/image09.jpg" alt="" class="col-md-4" onclick="updatePreview('./img/image09.jpg', 'image09.jpg')">
+                <img src="./img/image02.jpg" alt="" class="col-md-4" onclick="updatePreview('./img/image02.jpg', 'image02.jpg')">
+                <img src="./img/image03.jpg" alt="" class="col-md-4" onclick="updatePreview('./img/image03.jpg', 'image03.jpg')">
+              </div>
+
+
+              <div class="row mt-3">
+                <img src="./img/image04.jpg" alt="" class="col-md-4" onclick="updatePreview('./img/image04.jpg', 'image04.jpg')">
+                <img src="./img/image05.jpg" alt="" class="col-md-4" onclick="updatePreview('./img/image05.jpg', 'image05.jpg')">
+                <img src="./img/image06.jpg" alt="" class="col-md-4" onclick="updatePreview('./img/image06.jpg', 'image06.jpg')">
+              </div>
+
+
+              <div class="row mt-3">
+                <img src="./img/image07.jpg" alt="" class="col-md-4" onclick="updatePreview('./img/image07.jpg', 'image07.jpg')">
+                <img src="./img/image08.jpg" alt="" class="col-md-4" onclick="updatePreview('./img/image08.jpg', 'image08.jpg')">
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 </div>
 
 <!-- Modal -->
@@ -139,5 +183,11 @@ require __DIR__ . '/db-connect.php';
         .catch(ex => console.log(ex))
     }
   };
+
+  function updatePreview(src, filename) {
+    document.getElementById('previewImage').src = src;
+    document.getElementById('user_img').value = filename;
+  }
 </script>
+
 <?php include __DIR__ . "/parts/html-foot.php"; ?>

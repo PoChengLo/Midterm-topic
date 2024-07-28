@@ -10,17 +10,17 @@ $output = [
 ];
 
 // 檢查必要的欄位是否存在
-$required_fields = ['name', 'email', 'mobile'];
+$required_fields = ['name', 'email', 'mobile', 'user_img'];
 foreach ($required_fields as $field) {
-    if (empty($_POST[$field])) {
-        $output['errors'][] = "Field $field is required.";
-    }
+  if (empty($_POST[$field])) {
+    $output['errors'][] = "Field $field is required.";
+  }
 }
 
 // 如果有錯誤，返回錯誤信息
 if (!empty($output['errors'])) {
-    echo json_encode($output);
-    exit;
+  echo json_encode($output);
+  exit;
 }
 
 // 驗證和格式化生日
@@ -35,35 +35,35 @@ if ($ts === false) {
 
 // 如果有錯誤，返回錯誤信息
 if (!empty($output['errors'])) {
-    echo json_encode($output);
-    exit;
+  echo json_encode($output);
+  exit;
 }
 
 // 設置 PDO 錯誤模式
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 try {
-    $sql = "INSERT INTO `userinfo`( 
+  $sql = "INSERT INTO `userinfo`( 
       `user_name`, `email`, `mobile`,
-      `birthday`, `address`, `create_day`
+      `birthday`, `address`, `user_img`, `create_day`
       ) VALUES (
         ?, ?, ?, 
-        ?, ?, NOW()
+        ?, ?, ?, NOW()
       )";
 
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-      $_POST['name'],
-      $_POST['email'],
-      $_POST['mobile'],
-      $birthday,
-      $_POST['address'],
-    ]);
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([
+    $_POST['name'],
+    $_POST['email'],
+    $_POST['mobile'],
+    $birthday,
+    $_POST['address'],
+    $_POST['user_img'],
+  ]);
 
-    $output['success'] = !!$stmt->rowCount();
+  $output['success'] = !!$stmt->rowCount();
 } catch (Exception $e) {
-    $output['errors'][] = $e->getMessage();
+  $output['errors'][] = $e->getMessage();
 }
 
 echo json_encode($output);
-
