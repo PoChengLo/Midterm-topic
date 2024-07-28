@@ -33,7 +33,7 @@ if (!isset($pageName)) {
             <a class="nav-link <?= $pageName == 'ab_list' ? 'active' : '' ?>" href="index_user.php">列表</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= $pageName == 'ab_add' ? 'active' : '' ?>" href="add.php">新增通訊錄</a>
+            <a class="nav-link <?= $pageName == 'ab_add' ? 'active' : '' ?>" href="add.php">新增會員資料</a>
           </li>
         </ul>
 
