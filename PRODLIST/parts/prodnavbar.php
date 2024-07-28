@@ -1,4 +1,4 @@
-<?php
+<aㄇ?php
 if (!isset($pageName)) {
   $pageName = "";
 }
@@ -29,7 +29,7 @@ if (!isset($pageName)) {
         <input class="form-control me-2" id="search" type="search" name="search" placeholder="Search" aria-label="Search" >
         <button class="btn btn-outline-dark text-white" type="submit" >Search</button>
       </form>
-      <button class="btn btn-outline-dark text-white" type="submit">Clear</button>
+      <a class="btn btn-outline-dark text-white" type="submit" href="prodindex.php" >Clear</a>
 
       <ul class="navbar-nav">
         <?php if (isset($_SESSION['admin'])) : ?>
