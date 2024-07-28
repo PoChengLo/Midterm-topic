@@ -1,5 +1,4 @@
-
- <?php
+<?php
 require __DIR__ . '/parts/admin-required.php';
 $title = "商品列表";
 $pageName = 'prod_list';
@@ -52,7 +51,7 @@ if ($totalRows) {
 }
 
 
-?> 
+?>
 
 
 <?php include __DIR__ . '/parts/prodhead.php' ?>
@@ -130,6 +129,7 @@ if ($totalRows) {
 <?php include __DIR__ . '/parts/prodscript.php' ?>
 <script>
   const data = <?= json_encode($rows) ?>;
+  //刪除資料程式碼
   const deleteOne = function(prod_id) {
     if (confirm(`是否刪除編號為${prod_id}的資料`)) {
       location.href = `proddel.php?prod_id=${prod_id}`;
