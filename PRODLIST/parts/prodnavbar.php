@@ -3,14 +3,6 @@ if (!isset($pageName)) {
   $pageName = "";
 }
 
-// $where = ' WHERE 1 ';  # SQL 條件開頭
-// # 搜尋功能，搜尋兩個欄位：name, mobile
-// $search = $_GET['search'] ?? '';  # ?? 的左側若為 undefined 則使用右側的值
-// if ($search) {
-//   $search_esc = $pdo->quote("%{$search}%");  # SQL 特殊字元跳脫並包裹單引號
-//   $where .= " AND ( `prod_name` LIKE $search_esc OR `prod_desc` LIKE $search_esc ) ";
-// }
-//value="<?= htmlentities($search) 
 ?>
 
 
@@ -37,10 +29,6 @@ if (!isset($pageName)) {
         <input class="form-control me-2" id="search" type="search" name="search" placeholder="Search" aria-label="Search" >
         <button class="btn btn-outline-dark text-white" type="submit" >Search</button>
       </form>
-      <!-- <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value="<?= htmlentities($search)?>">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
       <button class="btn btn-outline-dark text-white" type="submit">Clear</button>
 
       <ul class="navbar-nav">
