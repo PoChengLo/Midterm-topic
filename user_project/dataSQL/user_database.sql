@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-07-29 07:20:26
+-- 產生時間： 2024-07-29 07:48:28
 -- 伺服器版本： 8.4.0
 -- PHP 版本： 8.1.25
 
@@ -166,14 +166,14 @@ CREATE TABLE `userinfo` (
 --
 
 INSERT INTO `userinfo` (`user_id`, `user_name`, `email`, `password`, `nick_name`, `user_img`, `birthday`, `create_day`, `last_date`, `qr_img`, `mobile`, `line_id`, `postal_code`, `address`, `recipient`, `contact_number`, `store_firm`, `store_id`, `history_id`, `note`) VALUES
-(20240023, '王小明', 'alice@example.com', '7dcf407fa84a0e0519c7991154c4148de0244d7589020c0d9842db9efad82094', '活潑松鼠', 'image09.jpg', '1985-05-15', '2024-07-01 00:00:00', NULL, 'qr_code01.jpg', '0912345678', 'line_alice', 10001, '台北市', '王小明', '0912345678', '全家', '12345678', 1, 'Note here'),
-(20240024, '李華', 'bob@example.com', '8bb4c01cc43f617ccfd1d4745b19b5a6030d15b12750b39d60479ae7504a7387', '神秘貓頭鷹', 'image02.jpg', '1992-03-22', '2024-07-01 00:00:00', NULL, 'qr_code02.jpg', '0912345679', 'line_bob', 20002, '新北市', '李華', '0912345679', '711', '23456789', 2, 'Note here'),
-(20240025, '陳大同', 'charlie@example.com', 'b2220233e90770a24fbb70547bffab2bacf447aecf6551bf9e3c8a016769cd7f', '優雅孔雀', 'image03.jpg', '1987-07-13', '2024-07-01 00:00:00', NULL, 'qr_code03.jpg', '0912345680', 'line_charlie', 30003, '桃園市', '陳大同', '0912345680', '萊爾富', '34567890', 3, 'Note here'),
-(20240026, '張美麗', 'david@example.com', '61da1bf4b810347c76923eb525e4a29d410770807cbb4f560371d7509f55b78f', '靈巧狐狸', 'image04.jpg', '1995-10-30', '2024-07-01 00:00:00', NULL, 'qr_code04.jpg', '0912345681', 'line_david', 40004, '台中市', '張美麗', '0912345681', 'OK', '45678901', 4, 'Note here'),
-(20240027, '林俊傑', 'eve@example.com', '2e338461aafd52d1978df6c609b25fd094e89d454e82fd87c86f8d40e743ea2f', '勇敢獅子', 'image05.jpg', '2000-01-20', '2024-07-01 00:00:00', NULL, 'qr_code05.jpg', '0912345682', 'line_eve', 50005, '台南市', '林俊傑', '0912345682', '全家', '56789012', 5, 'Note here'),
-(20240028, '黃小華', 'frank@example.com', 'bd83e5076d73480b48661c9220edc29f890e4113f7757b69683edee5c753a966', '魅惑豹', 'image06.jpg', '1988-04-25', '2024-07-01 00:00:00', NULL, 'qr_code06.jpg', '0912345683', 'line_frank', 60006, '高雄市', '黃小華', '0912345683', '711', '67890123', 6, 'Note here'),
-(20240029, '周大志', 'grace@example.com', '7d1164dfc3783575e47abde7fea70cdbce9f77a7d75ebbf7d34b196fe2ea8ec2', '神聖箭', 'image07.jpg', '1991-09-09', '2024-07-01 00:00:00', NULL, 'qr_code07.jpg', '0912345684', 'line_grace', 70007, '基隆市', '周大志', '0912345684', '萊爾富', '78901234', 7, 'Note here'),
-(20240030, '鄭麗娟', 'hannah@example.com', '46538aba4b44e223f69213017aad5f6894dffb7a78fa1cde7ea80371d350106f', '俏皮海獺', 'image08.jpg', '1983-11-27', '2024-07-01 00:00:00', NULL, 'qr_code08.jpg', '0912345685', 'line_hannah', 80008, '新竹市', '鄭麗娟', '0912345685', 'OK', '89012345', 8, 'Note here'),
+(20240023, '賣草鞋的', 'alice@example.com', '7dcf407fa84a0e0519c7991154c4148de0244d7589020c0d9842db9efad82094', '活潑松鼠', 'image09.jpg', '1985-05-15', '2024-07-01 00:00:00', NULL, 'qr_code01.jpg', '0912345678', 'line_alice', 10001, '台北市', '王小明', '0912345678', '全家', '12345678', 1, 'Note here'),
+(20240024, '嘟嘟', 'bob@example.com', '8bb4c01cc43f617ccfd1d4745b19b5a6030d15b12750b39d60479ae7504a7387', '神秘貓頭鷹', 'image02.jpg', '1992-03-22', '2024-07-01 00:00:00', NULL, 'qr_code02.jpg', '0912345679', 'line_bob', 20002, '新北市', '李華', '0912345679', '711', '23456789', 2, 'Note here'),
+(20240025, '大膽曹賊', 'charlie@example.com', 'b2220233e90770a24fbb70547bffab2bacf447aecf6551bf9e3c8a016769cd7f', '優雅孔雀', 'image03.jpg', '1987-07-13', '2024-07-01 00:00:00', NULL, 'qr_code03.jpg', '0912345680', 'line_charlie', 30003, '桃園市', '陳大同', '0912345680', '萊爾富', '34567890', 3, 'Note here'),
+(20240026, '孫家的', 'david@example.com', '61da1bf4b810347c76923eb525e4a29d410770807cbb4f560371d7509f55b78f', '靈巧狐狸', 'image04.jpg', '1995-10-30', '2024-07-01 00:00:00', NULL, 'qr_code04.jpg', '0912345681', 'line_david', 40004, '台中市', '張美麗', '0912345681', 'OK', '45678901', 4, 'Note here'),
+(20240027, '三弟', 'eve@example.com', '2e338461aafd52d1978df6c609b25fd094e89d454e82fd87c86f8d40e743ea2f', '勇敢獅子', 'image05.jpg', '2000-01-20', '2024-07-01 00:00:00', NULL, 'qr_code05.jpg', '0912345682', 'line_eve', 50005, '台南市', '林俊傑', '0912345682', '全家', '56789012', 5, 'Note here'),
+(20240028, '二哥', 'frank@example.com', 'bd83e5076d73480b48661c9220edc29f890e4113f7757b69683edee5c753a966', '魅惑豹', 'image06.jpg', '1988-04-25', '2024-07-01 00:00:00', NULL, 'qr_code06.jpg', '0912345683', 'line_frank', 60006, '高雄市', '黃小華', '0912345683', '711', '67890123', 6, 'Note here'),
+(20240029, '天下無敵', 'grace@example.com', '7d1164dfc3783575e47abde7fea70cdbce9f77a7d75ebbf7d34b196fe2ea8ec2', '神聖箭', 'image07.jpg', '1991-09-09', '2024-07-01 00:00:00', NULL, 'qr_code07.jpg', '0912345684', 'line_grace', 70007, '基隆市', '周大志', '0912345684', '萊爾富', '78901234', 7, 'Note here'),
+(20240030, '諸葛村夫', 'hannah@example.com', '46538aba4b44e223f69213017aad5f6894dffb7a78fa1cde7ea80371d350106f', '俏皮海獺', 'image08.jpg', '1983-11-27', '2024-07-01 00:00:00', NULL, 'qr_code08.jpg', '0912345685', 'line_hannah', 80008, '新竹市', '鄭麗娟', '0912345685', 'OK', '89012345', 8, 'Note here'),
 (20240031, '趙小龍', 'isaac@example.com', 'b40719631cc05459f82bb41788aee341f7bcda4bb58d4657d60d524fef9349d6', '驚艷紅鶴', 'image01.jpg', '1994-02-14', '2024-07-01 00:00:00', NULL, 'qr_code09.jpg', '0912345686', 'line_isaac', 90009, '台中市', '趙小龍', '0912345686', '全家', '90123456', 9, 'Note here'),
 (20240032, '劉小婷', 'jack@example.com', 'e9bd5c83d5f890bab491e1ddc17f9983f7ecc678de0d457f83c4ac1c19a366ce', '獨立貓', 'image01.jpg', '1986-12-01', '2024-07-01 00:00:00', NULL, 'qr_code10.jpg', '0912345687', 'line_jack', 10010, '台南市', '劉小婷', '0912345687', '711', '01234567', 10, 'Note here'),
 (20240033, '徐建國', 'kate@example.com', '26254f06ab6f2dda8c89fe5a42a6a790ddcb8582046cc3a9fc8c6633d185052c', '強壯水牛', 'image01.jpg', '1990-06-16', '2024-07-01 00:00:00', NULL, 'qr_code11.jpg', '0912345688', 'line_kate', 20011, '高雄市', '徐建國', '0912345688', '萊爾富', '12345678', NULL, 'Note here'),
@@ -347,10 +347,10 @@ INSERT INTO `userinfo` (`user_id`, `user_name`, `email`, `password`, `nick_name`
 (20241078, '江恆恩', 'ursula1@email.com', '3a1f3d21393be4b8e74e39955b2c2a3512e10830bd78d30f3cb1454e0df13c3f', '烈焰弓', 'image01.jpg', '1992-04-21', '2024-07-01 00:00:00', NULL, 'qr_code141.jpg', '0919945720', 'line_aursula1', 30041, '新北市', '江恆恩', '0919945720', '全家', '23456789', NULL, 'Note here'),
 (20241079, '程均棟', 'victor1@email.com', '34464be34dd678136545b97ea5833c4740a8fc7095597e60fa16c5bb0d1ef7f1', '暗影盾', 'image01.jpg', '1988-12-30', '2024-07-01 00:00:00', NULL, 'qr_code142.jpg', '0919945721', 'line_avictor1', 40042, '桃園市', '程均棟', '0919945721', '711', '34567890', NULL, 'Note here'),
 (20241080, '賴容文', 'wendy1@email.com', '82bd9486604046d9b3955a6983d924bfc1ecfd6489a0e48189e3cb653a6854a2', '光明劍', 'image01.jpg', '1984-09-17', '2024-07-01 00:00:00', NULL, 'qr_code143.jpg', '0919945722', 'line_awendy1', 50043, '台中市', '賴容文', '0919945722', '萊爾富', '23456789', NULL, 'Note here'),
-(20241081, '噴火龍', 'test@email.com', '12341234', '噴火龍', NULL, NULL, '2024-07-17 08:54:50', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20241082, '水箭龜', 'test1@email.com', '$2y$12$QjSH496pcT5CEbzjD/vtVeH03tfHKFy36d4J0Ltp3lRtee9HDxY3K', 'X進化水箭龜', NULL, NULL, '2024-07-17 09:38:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20241083, '阿嘟嘟', '123qwertt@mail.com', '$2y$10$VdDD5gG8/YhOVyFde/gICeRQ7H870h46ELekpRE1NXRAfBvH9Huki', '阿布嘟嘟', NULL, '2024-07-16', '2024-07-18 15:26:19', NULL, NULL, '0917878787', NULL, NULL, '13246', NULL, NULL, NULL, NULL, NULL, NULL),
-(20241084, '法蘭', 'PlayUncle1925@gmail.com', '$2y$10$VdDD5gG8/YhOVyFde/gICeRQ7H870h46ELekpRE1NXRAfBvH9Huki', NULL, NULL, '2024-07-01', '2024-07-18 21:58:10', NULL, NULL, '0917765847', NULL, NULL, '新北市', NULL, NULL, NULL, NULL, NULL, NULL);
+(20241081, '噴火龍', 'test@email.com', '12341234', '噴火龍', 'image01.jpg', NULL, '2024-07-17 08:54:50', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(20241082, '水箭龜', 'test1@email.com', '$2y$12$QjSH496pcT5CEbzjD/vtVeH03tfHKFy36d4J0Ltp3lRtee9HDxY3K', 'X進化水箭龜', 'image01.jpg', NULL, '2024-07-17 09:38:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(20241083, '阿嘟嘟', '123qwertt@mail.com', '$2y$10$VdDD5gG8/YhOVyFde/gICeRQ7H870h46ELekpRE1NXRAfBvH9Huki', '阿布嘟嘟', 'image01.jpg', '2024-07-16', '2024-07-18 15:26:19', NULL, NULL, '0917878787', NULL, NULL, '13246', NULL, NULL, NULL, NULL, NULL, NULL),
+(20241084, '法蘭', 'PlayUncle1925@gmail.com', '$2y$10$VdDD5gG8/YhOVyFde/gICeRQ7H870h46ELekpRE1NXRAfBvH9Huki', '夜光閃亮亮復仇鬼', 'image01.jpg', '2024-07-01', '2024-07-18 21:58:10', NULL, NULL, '0917765847', NULL, NULL, '新北市', NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- 已傾印資料表的索引
