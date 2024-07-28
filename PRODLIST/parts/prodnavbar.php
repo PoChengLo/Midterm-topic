@@ -23,8 +23,8 @@ if (!isset($pageName)) {
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark text-white" type="submit">Search</button>
+        <input class="form-control me-2" id="search" type="search" name="search" placeholder="Search" aria-label="Search" >
+        <button class="btn btn-outline-dark text-white" type="submit" >Search</button>
       </form>
       <button class="btn btn-outline-dark text-white" type="submit">Clear</button>
 

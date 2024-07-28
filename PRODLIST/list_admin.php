@@ -13,6 +13,9 @@ if ($page < 1) {
   exit; //結束程式碼 
 }
 
+// 搜尋功能關鍵字設定
+$search = isset($_GET['search']) ? ($_GET['search']) : '';
+
 require __DIR__ . '/db-connect-setting.php';
 $totalSql = "SELECT COUNT(*) FROM PRODLIST";
 $totalRows = $pdo->query($totalSql)->fetch(PDO::FETCH_NUM)[0];
@@ -27,14 +30,24 @@ if ($totalRows) {
     header('Location: ?page=' . $totalPages);
     exit;
   }
-  //取得該頁資料
-  $sql = sprintf(
-    // "SELECT p.prod_id , p.prod_name , p.prod_img , t.tag_name , p.prod_desc , p.prod_price , p.prod_disc , p.prod_stock , p.prod_stock , p.prod_update , t.tag_name FROM PRODLIST p JOIN PRODTAG pt ON p.prod_id = pt.prod_id JOIN TAGLIST t ON pt.tag_id = t.tag_id LIMIT %d OFFSET %d",
-    "SELECT * FROM PRODLIST LIMIT %d OFFSET %d",
-    $perPage,
-    ($page - 1) * $perPage
-  );
-  $rows = $pdo->query($sql)->fetchAll();
+  if ($search) {
+    $perPage = 20;
+    $sql = sprintf(
+      "SELECT * FROM PRODLIST WHERE prod_name LIKE '%%$search%%' OR prod_id LIKE '%%$search%%' OR prod_desc LIKE '%%$search%%' OR prod_disc LIKE '%%$search%%' OR prod_price LIKE '%%$search%%' OR prod_update LIKE '%%$search%%' LIMIT %d OFFSET %d",
+      $perPage,
+      ($page - 1) * $perPage
+    );
+    $rows = $pdo->query($sql)->fetchAll();
+  } else {
+    //取得該頁資料
+    $sql = sprintf(
+      // "SELECT p.prod_id , p.prod_name , p.prod_img , t.tag_name , p.prod_desc , p.prod_price , p.prod_disc , p.prod_stock , p.prod_stock , p.prod_update , t.tag_name FROM PRODLIST p JOIN PRODTAG pt ON p.prod_id = pt.prod_id JOIN TAGLIST t ON pt.tag_id = t.tag_id LIMIT %d OFFSET %d",
+      "SELECT * FROM PRODLIST LIMIT %d OFFSET %d",
+      $perPage,
+      ($page - 1) * $perPage
+    );
+    $rows = $pdo->query($sql)->fetchAll();
+  }
 }
 ?>
 
@@ -43,16 +56,6 @@ if ($totalRows) {
 <!-- <div class="container-fluid my-3 "> -->
 <div class="container my-3 ">
   <div class="row d-flex align-items-center">
-    <!-- <div class="col-2 ">
-      <div class="list-group ">
-        <a href="../user_project/user_CRUD/index_user.php" class="list-group-item list-group-item-action">A second link item</a>
-        <a href="../PRODLIST/list_admin.php" class="list-group-item list-group-item-action active list-group-item-dark" aria-current="true">
-          商品列表
-        </a>
-        <a href="../LARPLIST/index_larp.php" class="list-group-item list-group-item-action">A third link item</a>
-        <a href="../ACTLIST/index_act.php" class="list-group-item list-group-item-action">A third link item</a>
-      </div>
-    </div> -->
     <div class="col">
       <div class="row">
         <div class="col">
@@ -62,7 +65,7 @@ if ($totalRows) {
               for ($i = $page - 5; $i <= $page + 5; $i++) :
                 if ($i >= 1 && $i <= $totalPages) :
               ?>
-                  <li class="page-item <?= $i == $page ? 'pagination-lg' : '' ?> ">
+                  <li class="page-item <?= $i == $page ? 'pagination-lg' : '' ?> <?= $perPage == 20 ? 'd-none' : '' ?>">
                     <a class="page-link" href="?page=<?= $i ?> "><?= $i ?></a>
                   </li>
               <?php
