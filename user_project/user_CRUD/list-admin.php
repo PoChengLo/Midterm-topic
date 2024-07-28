@@ -137,7 +137,7 @@ if ($totalRows) {
                   <td><?= $r['user_id'] ?></td>
 
                   <td><?= $r['user_name'] ?></td>
-                  <td><img style="height:50px;width:50px;" src="./img/<?= $r['user_img'] ?>"></td>
+                  <td><img style="height:50px;width:50px;border-radius:50%;" src="./img/<?= $r['user_img'] ?>"></td>
                   <td><?= $r['email'] ?></td>
                   <td><?= $r['mobile'] ?></td>
                   <td><?= $r['birthday'] ?></td>
