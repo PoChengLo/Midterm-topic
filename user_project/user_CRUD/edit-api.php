@@ -9,8 +9,7 @@ $output = [
   'code' => 0, # 除錯用
 ];
 
-
-// TODO: 表單欄位的資料檢查
+// 表單欄位的資料檢查
 $user_id = isset($_POST['user_id']) ? intval($_POST['user_id']) : 0;
 if (empty($user_id)) {
   $output['code'] = 400;
@@ -24,7 +23,6 @@ if (mb_strlen($name) < 2) {
   exit;
 }
 
-
 $birthday = $_POST['birthday'];
 $ts = strtotime($birthday); # 轉換成 timestamp
 if ($ts === false) {
@@ -33,15 +31,16 @@ if ($ts === false) {
   $birthday = date('Y-m-d', $ts);
 }
 
-
+$user_img = $_POST['user_img'] ?? ''; # 確保接收到 user_img
 
 $sql = "UPDATE `userinfo` SET 
     `user_name`=?,
     `email`=?,
     `mobile`=?,
     `birthday`=?,
-    `address`=?
-    WHERE `user_id`=? ";
+    `address`=?,
+    `user_img`=?
+    WHERE `user_id`=?";
 
 $stmt = $pdo->prepare($sql); # 準備 sql 語法, 除了 "值" 語法要合法
 $stmt->execute([
@@ -50,8 +49,10 @@ $stmt->execute([
   $_POST['mobile'],
   $birthday,
   $_POST['address'],
+  $user_img,
   $user_id,
 ]);
 
 $output['success'] = !!$stmt->rowCount();
 echo json_encode($output);
+?>

@@ -7,10 +7,10 @@ if (empty($user_id)) {
   header('Location: index_user.php');
   exit;
 }
+
 $sql = "SELECT * FROM userinfo WHERE user_id=$user_id";
-
-
 $r = $pdo->query($sql)->fetch();
+
 if (empty($r)) {
   header('Location: index_user.php');
   exit;
@@ -19,6 +19,7 @@ if (empty($r)) {
 # header('Content-Type: application/json'); # 告訴瀏覽器內容為 JSON
 # echo json_encode($r);
 ?>
+
 <?php include __DIR__ . "/parts/html-head.php"; ?>
 <style>
   form .mb-3 .form-text {
@@ -26,16 +27,18 @@ if (empty($r)) {
   }
 </style>
 <?php include __DIR__ . "/parts/navbar.php"; ?>
+
 <div class="container">
   <div class="row">
     <div class="col-6">
       <div class="card">
-
         <div class="card-body">
           <h5 class="card-title">編輯會員資料</h5>
 
           <form name="form1" onsubmit="sendData(event)" novalidate>
             <input type="hidden" name="user_id" value="<?= $r['user_id'] ?>">
+            <input type="hidden" name="user_img" id="user_img" value="<?= $r['user_img'] ?>">
+            
             <div class="mb-3">
               <label for="name" class="form-label">姓名</label>
               <input type="text" class="form-control" name="name" value="<?= htmlentities($r['user_name']) ?>" id="name" required>
@@ -47,21 +50,60 @@ if (empty($r)) {
               <input type="email" class="form-control" name="email" value="<?= $r['email'] ?>" id="email">
               <div class="form-text"></div>
             </div>
+
             <div class="mb-3">
               <label for="mobile" class="form-label">手機</label>
               <input type="text" class="form-control" name="mobile" value="<?= $r['mobile'] ?>" id="mobile">
               <div class="form-text"></div>
             </div>
+
             <div class="mb-3">
               <label for="birthday" class="form-label">生日</label>
               <input type="date" class="form-control" name="birthday" value="<?= $r['birthday'] ?>" id="birthday">
             </div>
+
             <div class="mb-3">
               <label for="address" class="form-label">地址</label>
               <textarea class="form-control" name="address" id="address" rows="3"><?= htmlentities($r['address']) ?></textarea>
             </div>
+
             <button type="submit" class="btn btn-primary">修改</button>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="card ms-3" style="width: 25rem;">
+      <img id="previewImage" src="./img/<?= $r['user_img'] ?>" class="card-img-top mt-3" alt="Preview" style="width:250px;border: 2px solid #333;">
+      <div class="card-body">
+        <h5 class="card-title">自訂您的使用者頭像</h5>
+        <p class="card-text">用我們高度客製化的圖片來展現您的個人丰采吧！相信這裡一定有契合你靈魂的人物！</p>
+
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          選擇圖片
+        </a>
+
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <div class="container">
+              <div class="row">
+                <img src="./img/image09.jpg" alt="Image 09" class="col-md-4" onclick="updatePreview('./img/image09.jpg', 'image09.jpg')">
+                <img src="./img/image02.jpg" alt="Image 02" class="col-md-4" onclick="updatePreview('./img/image02.jpg', 'image02.jpg')">
+                <img src="./img/image03.jpg" alt="Image 03" class="col-md-4" onclick="updatePreview('./img/image03.jpg', 'image03.jpg')">
+              </div>
+
+              <div class="row mt-3">
+                <img src="./img/image04.jpg" alt="Image 04" class="col-md-4" onclick="updatePreview('./img/image04.jpg', 'image04.jpg')">
+                <img src="./img/image05.jpg" alt="Image 05" class="col-md-4" onclick="updatePreview('./img/image05.jpg', 'image05.jpg')">
+                <img src="./img/image06.jpg" alt="Image 06" class="col-md-4" onclick="updatePreview('./img/image06.jpg', 'image06.jpg')">
+              </div>
+
+              <div class="row mt-3">
+                <img src="./img/image07.jpg" alt="Image 07" class="col-md-4" onclick="updatePreview('./img/image07.jpg', 'image07.jpg')">
+                <img src="./img/image08.jpg" alt="Image 08" class="col-md-4" onclick="updatePreview('./img/image08.jpg', 'image08.jpg')">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -150,5 +192,10 @@ if (empty($r)) {
         .catch(ex => console.log(ex))
     }
   };
+
+  function updatePreview(src, filename) {
+    document.getElementById('previewImage').src = src;
+    document.getElementById('user_img').value = filename;
+  }
 </script>
 <?php include __DIR__ . "/parts/html-foot.php"; ?>
