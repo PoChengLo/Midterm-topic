@@ -47,6 +47,7 @@ if ($totalRows) {
   $rows = $pdo->query($sql)->fetchAll();
 };
 
+
 ?>
 
 
@@ -114,6 +115,7 @@ if ($totalRows) {
                 <th><i class="fa-solid fa-circle-xmark"></i></th>
                 <th>編號</th>
                 <th>姓名</th>
+                <th>頭貼</th>
                 <th>電郵</th>
                 <th>手機</th>
                 <th>生日</th>
@@ -125,15 +127,17 @@ if ($totalRows) {
               <?php foreach ($rows as $r) : ?>
                 <tr>
                   <td>
-                    <!--
-                <a href="del.php?user_id=<?= $r['user_id'] ?>" onclick="return confirm(`是否要刪除編號為 <?= $r['user_id'] ?> 的資料?`)">
-          -->
+
+
+
                     <a href="javascript: deleteOne(<?= $r['user_id'] ?>)">
                       <i class="fa-solid fa-trash"></i>
                     </a>
                   </td>
                   <td><?= $r['user_id'] ?></td>
+
                   <td><?= $r['user_name'] ?></td>
+                  <td><img style="height:50px;width:50px;border-radius:50%;" src="./img/<?= $r['user_img'] ?>"></td>
                   <td><?= $r['email'] ?></td>
                   <td><?= $r['mobile'] ?></td>
                   <td><?= $r['birthday'] ?></td>
@@ -157,7 +161,7 @@ if ($totalRows) {
     <script>
       const data = <?= json_encode($rows)  ?>;
       const deleteOne = (user_id) => {
-        if (confirm(`是否要刪除編號為 ${user_id} 的資料??`)) {
+        if (confirm(`是否要刪除編號 ${user_id} 的資料??`)) {
           location.href = `del.php?user_id=${user_id}`;
         }
       };
