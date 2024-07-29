@@ -68,7 +68,7 @@ if (!isset($pageName)) {
     <ul>
       <li class="li1"><img src="./img/dragon-and-dice.png" alt="" style="width:300px; height:150px"></li>
       <br><br>
-      <li class="li1" hover=""><a class="dropdown-item" href="/user_project/user_CRUD/index_user.php" style="color:white"><i class="fa-solid fa-skull" style="color:white"></i> &ensp;會員列表</a></li>
+      <li class="li1" hover=""><a class="dropdown-item" href="#" style="color:white"><i class="fa-solid fa-skull" style="color:white"></i> &ensp;會員列表</a></li>
       <br> <br>
       <li class="li1"><a class="dropdown-item" href="../../PRODLIST/prodindex.php" style="color:white"><i class="fa-solid fa-chess-queen" style="color:white"></i> &ensp;桌遊產品列表</a></li>
       <br> <br>
