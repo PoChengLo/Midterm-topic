@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024 年 07 月 29 日 09:31
+-- 產生時間： 2024 年 07 月 29 日 09:49
 -- 伺服器版本： 8.3.0
 -- PHP 版本： 8.1.17
 
@@ -545,7 +545,7 @@ CREATE TABLE `userinfo` (
   `user_id` int NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '$2y$10$VdDD5gG8/YhOVyFde/gICeRQ7H870h46ELekpRE1NXRAfBvH9Huki',
   `nick_name` varchar(255) DEFAULT NULL,
   `user_img` varchar(255) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
@@ -844,17 +844,6 @@ ALTER TABLE `taglist`
   ADD PRIMARY KEY (`tag_id`);
 
 --
--- 資料表索引 `userinfo`
---
-ALTER TABLE `userinfo`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `qr_img` (`qr_img`),
-  ADD UNIQUE KEY `mobile` (`mobile`),
-  ADD UNIQUE KEY `line_id` (`line_id`),
-  ADD KEY `userinfo_ibfk_1` (`history_id`);
-
---
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
@@ -893,12 +882,6 @@ ALTER TABLE `order_history`
 --
 ALTER TABLE `prodtag`
   MODIFY `prod_tag_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `userinfo`
---
-ALTER TABLE `userinfo`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20241085;
 
 --
 -- 已傾印資料表的限制式
