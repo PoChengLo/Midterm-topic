@@ -202,7 +202,7 @@ if (empty($r)) {
       isPass = false;
       infoField.nextElementSibling.innerHTML = '請輸入至少10個字的簡介';
     }
-    if (descField.value.length < 99) {
+    if (descField.value.length < 9) {
       isPass = false;
       descField.nextElementSibling.innerHTML = '請輸入至少100個字的故事敘述';
     }
