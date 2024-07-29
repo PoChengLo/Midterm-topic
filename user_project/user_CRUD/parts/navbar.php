@@ -70,11 +70,11 @@ if (!isset($pageName)) {
       <br><br>
       <li class="li1" hover=""><a class="dropdown-item" href="/user_project/user_CRUD/index_user.php" style="color:white"><i class="fa-solid fa-skull" style="color:white"></i> &ensp;會員列表</a></li>
       <br> <br>
-      <li class="li1"><a class="dropdown-item" href=".../PRODLIST/list_admin.php" style="color:white"><i class="fa-solid fa-chess-queen" style="color:white"></i> &ensp;桌遊產品列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="../../PRODLIST/prodindex.php" style="color:white"><i class="fa-solid fa-chess-queen" style="color:white"></i> &ensp;桌遊產品列表</a></li>
       <br> <br>
-      <li class="li1"><a class="dropdown-item" href=".../LARPLIST/index_larp.php" style="color:white"><i class="fa-solid fa-person-running" style="color:white"></i> &ensp;密室逃脫列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="../../LARPLIST/index_larp.php" style="color:white"><i class="fa-solid fa-person-running" style="color:white"></i> &ensp;密室逃脫列表</a></li>
       <br> <br>
-      <li class="li1"><a class="dropdown-item" href=".../ACTLIST/index_act.php" style="color:white"><i class="fa-regular fa-calendar-days" style="color:white"></i> &ensp; 活動列表</a></li>
+      <li class="li1"><a class="dropdown-item" href="../../ACTLIST/index_act.php" style="color:white"><i class="fa-regular fa-calendar-days" style="color:white"></i> &ensp; 活動列表</a></li>
     </ul>
   </div>
 </div>
